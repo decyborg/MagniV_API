@@ -1,0 +1,27 @@
+/** @mainpage MagniV API
+*
+* 
+*
+* <BR>
+* <h1>Introduction</h1>
+* <ul>
+* <li><h2>System Architecture</h2></li>
+* <P>
+* The layered architecture of the <A href="group___l_i_n21__core__api__group.html">LIN2.1</A>/ <A href="group___j2602__core__api__group.html">J2602</A> Stack package is shown on <A HREF="#figure1">Figure 1</A>. Such architecture approach aims maximum reusability of 
+* common code base for <A href="group___l_i_n21__core__api__group.html">LIN2.1</A> and <A href="group___j2602__core__api__group.html">J2602</A> standards for 8 bit and 16 bit Freescale automotive MCU portfolio. </P>
+* <P>The core API layer of <A href="group___l_i_n21__core__api__group.html">LIN2.1</A>/ <A href="group___j2602__core__api__group.html">J2602</A> handles initialization, processing and signal based interaction between application and LIN Core. 
+* The <A href="group___l_i_n21__core__api__group.html">LIN2.1</A> TL (Transport Layer) provides methods for tester to transmit diagnostic requests. </P>
+* <P>The low level layer offers method of handling signal transmission between user application and hardware independence 
+* such as byte sending, response receiving, break symbol detection, etc. </P>
+* <P>The physical transport layer of the Stack supports three standard interfaces SCI, SLIC, GPIO to operate with 8 bit and 16 bit MCU hardware.</P>
+* <A NAME="figure1"></A>
+* @image html LIN_Stack_Architecture.jpg
+* <CENTER><i>Figure 1.  LIN Stack Architecture diagram</i></CENTER>
+* <hr>
+* <li><h2>Supported Derivatives</h2></li>
+*   <p>The following table displays the list of supported MCU derivatives including the functionalities. Note that all 
+* derivatives support the LIN 2.0
+*
+* </p>
+* @author Manuel Rodriguez
+*/

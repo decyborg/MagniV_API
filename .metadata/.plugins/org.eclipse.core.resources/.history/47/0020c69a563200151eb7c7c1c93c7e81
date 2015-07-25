@@ -1,0 +1,10 @@
+/**	
+ *  @file cpmu.c
+ *  
+ * 	@brief Contains Clock and power management unit API routines for MagniV devices.
+ * 	
+ *	@author Manuel Rodriguez
+ *  
+ */
+/**/
+
