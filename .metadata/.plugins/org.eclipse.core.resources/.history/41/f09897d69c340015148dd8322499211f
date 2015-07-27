@@ -1,0 +1,24 @@
+/*
+ * cpmu.h
+ *
+ *  Created on: Jul 24, 2015
+ *      Author: B52932
+ */
+
+#ifndef CPMU_H_
+#define CPMU_H_
+
+/* Typedefs */
+typedef struct clock_dividers{
+	unsigned char = syndiv;
+	unsigned char =  postdiv;
+	unsigned char = refdiv;
+}clock_divider;
+
+/* Prototypes */
+void clock_init(unsigned long BusClock);
+clock_divider PLL(unsigned long FPLL);
+
+
+
+#endif /* CPMU_H_ */

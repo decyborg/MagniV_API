@@ -1,0 +1,15 @@
+/*
+ * cpmu.h
+ *
+ *  Created on: Jul 24, 2015
+ *      Author: B52932
+ */
+
+#ifndef CPMU_H_
+#define CPMU_H_
+
+/* Prototypes */
+void clock_init(unsigned int BusClock);
+void PLL(unsigned int FPLL);
+
+#endif /* CPMU_H_ */
