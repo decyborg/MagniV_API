@@ -1,0 +1,37 @@
+\hypertarget{structclock__dividers}{}\section{clock\+\_\+dividers Struct Reference}
+\label{structclock__dividers}\index{clock\+\_\+dividers@{clock\+\_\+dividers}}
+
+
+A structure that holds the divider values for the clock configuration.  
+
+
+
+
+{\ttfamily \#include $<$cpmu.\+h$>$}
+
+\subsection*{Data Fields}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{structclock__dividers_ac472b8dab9de3965014f9107d582f2c8}{}unsigned char \hyperlink{structclock__dividers_ac472b8dab9de3965014f9107d582f2c8}{syndiv}\label{structclock__dividers_ac472b8dab9de3965014f9107d582f2c8}
+
+\begin{DoxyCompactList}\small\item\em Multiplier to the Fvco, Fvco = 2$\ast$\+Fref$\ast$(syndiv+1) \end{DoxyCompactList}\item 
+\hypertarget{structclock__dividers_af8d6bd3f32d7274172c25ed5d7daad78}{}unsigned char \hyperlink{structclock__dividers_af8d6bd3f32d7274172c25ed5d7daad78}{postdiv}\label{structclock__dividers_af8d6bd3f32d7274172c25ed5d7daad78}
+
+\begin{DoxyCompactList}\small\item\em Divider for Fpll, Fpll = Fvco /(postdiv + 1) \end{DoxyCompactList}\item 
+\hypertarget{structclock__dividers_aa03d4b8ba36c4d6e7b6db9391921c816}{}unsigned char \hyperlink{structclock__dividers_aa03d4b8ba36c4d6e7b6db9391921c816}{refdiv}\label{structclock__dividers_aa03d4b8ba36c4d6e7b6db9391921c816}
+
+\begin{DoxyCompactList}\small\item\em Divider for Fref (only used with an external oscillator), Fref = Fosc /(refdiv + 1) \end{DoxyCompactList}\item 
+\hypertarget{structclock__dividers_a008f0adff713e4325900afe73ba3f322}{}unsigned char \hyperlink{structclock__dividers_a008f0adff713e4325900afe73ba3f322}{reffrq}\label{structclock__dividers_a008f0adff713e4325900afe73ba3f322}
+
+\begin{DoxyCompactList}\small\item\em Reference clock range selection. \end{DoxyCompactList}\item 
+\hypertarget{structclock__dividers_a43a20a81435bbc4e8e331e54ba6cb1cd}{}unsigned char \hyperlink{structclock__dividers_a43a20a81435bbc4e8e331e54ba6cb1cd}{vcofrq}\label{structclock__dividers_a43a20a81435bbc4e8e331e54ba6cb1cd}
+
+\begin{DoxyCompactList}\small\item\em V\+C\+O clock frequency range selection. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+A structure that holds the divider values for the clock configuration. 
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+C\+:/\+Users/b52932/\+Documents/\+Magni\+V\+\_\+\+A\+P\+I/\+Magni\+V\+\_\+\+A\+P\+I/\+Sources/\+Magni\+V\+\_\+\+A\+P\+I/\+C\+P\+M\+U/\hyperlink{cpmu_8h}{cpmu.\+h}\end{DoxyCompactItemize}

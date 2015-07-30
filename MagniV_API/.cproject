@@ -53,6 +53,8 @@
 								</option>
 								<option id="com.freescale.s12z.toolchain.compiler.input.include.1704201503" name="Search User Paths (#include &quot;...&quot;)" superClass="com.freescale.s12z.toolchain.compiler.input.include" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/CPMU&quot;"/>
 								</option>
 								<inputType id="com.freescale.s12z.toolchain.compiler.inputType2.c.451147870" name="S12Z C Compiler Input" superClass="com.freescale.s12z.toolchain.compiler.inputType2.c"/>
 								<inputType id="com.freescale.s12z.toolchain.compiler.inputType2.cpp.1943479300" name="S12Z C++ Compiler Input" superClass="com.freescale.s12z.toolchain.compiler.inputType2.cpp"/>
@@ -73,6 +75,7 @@
 					</fileInfo>
 					<folderInfo id="com.freescale.s12z.toolchain.release.1016488858.714995442" name="/" resourcePath="Sources">
 						<toolChain id="com.freescale.s12z.toolchain.release.1309324368" name="S12Z Toolchain" superClass="com.freescale.s12z.toolchain.release" unusedChildren="">
+							<targetPlatform id="com.freescale.s12z.toolchain.targetPlatform" isAbstract="false" name="S12Z Target Platform" superClass="com.freescale.s12z.toolchain.targetPlatform"/>
 							<tool id="com.freescale.s12z.toolchain.preprocessor.613534794" name="S12Z Preprocessor" superClass="com.freescale.s12z.toolchain.preprocessor.884874959"/>
 							<tool id="com.freescale.s12z.toolchain.disassembler.1486567771" name="S12Z Disassembler" superClass="com.freescale.s12z.toolchain.disassembler.454418769"/>
 							<tool id="com.freescale.s12z.toolchain.burner.1347861724" name="S12Z Burner" superClass="com.freescale.s12z.toolchain.burner.151450694"/>
@@ -80,8 +83,9 @@
 							<tool id="com.freescale.s12z.toolchain.compiler.642197348" name="S12Z Compiler" superClass="com.freescale.s12z.toolchain.compiler.1847836114">
 								<option id="com.freescale.s12z.toolchain.compiler.warnings.warningsFlag.hidden.adjusted.674898502.adjusted.327500307" superClass="com.freescale.s12z.toolchain.compiler.warnings.warningsFlag.hidden.adjusted.674898502" value="false" valueType="boolean"/>
 								<option id="com.freescale.s12z.toolchain.compiler.warnings.enableWarnings.hidden.adjusted.1390122254.adjusted.737750533" superClass="com.freescale.s12z.toolchain.compiler.warnings.enableWarnings.hidden.adjusted.1390122254" value="com.freescale.s12z.toolchain.warnings.enableWarnings.custom.hidden" valueType="enumerated"/>
-								<option id="com.freescale.s12z.toolchain.compiler.input.include.1353092023" superClass="com.freescale.s12z.toolchain.compiler.input.include" valueType="includePath">
+								<option id="com.freescale.s12z.toolchain.compiler.input.include.1353092023" name="Search User Paths (#include &quot;...&quot;)" superClass="com.freescale.s12z.toolchain.compiler.input.include" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/CPMU&quot;"/>
 								</option>
 								<inputType id="com.freescale.s12z.toolchain.compiler.inputType2.c.167067390" name="S12Z C Compiler Input" superClass="com.freescale.s12z.toolchain.compiler.inputType2.c"/>

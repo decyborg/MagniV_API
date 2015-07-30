@@ -1,24 +1,30 @@
 var indexSectionsWithContent =
 {
-  0: "cm",
+  0: "cmprsv",
   1: "c",
   2: "c",
-  3: "m"
+  3: "cs",
+  4: "prsv",
+  5: "m"
 };
 
 var indexSectionNames =
 {
   0: "all",
-  1: "files",
-  2: "functions",
-  3: "pages"
+  1: "classes",
+  2: "files",
+  3: "functions",
+  4: "variables",
+  5: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
-  1: "Files",
-  2: "Functions",
-  3: "Pages"
+  1: "Data Structures",
+  2: "Files",
+  3: "Functions",
+  4: "Variables",
+  5: "Pages"
 };
 
