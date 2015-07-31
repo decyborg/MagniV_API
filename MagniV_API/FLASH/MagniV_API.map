@@ -24,7 +24,7 @@ Entry point: 0xFF802E (_Startup)
 _startupData is allocated at 0xFF803E and uses 20 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     0
-  _Copy    *toCopyDownBeg 0xFF81A7
+  _Copy    *toCopyDownBeg 0xFF82B8
   int      nofInitBodies  0
   _Cpp     *initBodies    0xFF8052
   int      nofFiniBodies  0
@@ -37,8 +37,8 @@ Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .init                             62     R   0xFF8000   0xFF803D   ROM
 .startData                        27     R   0xFF803E   0xFF8058   ROM
-.text                            334     R   0xFF8059   0xFF81A6   ROM
-.copy                              4     R   0xFF81A7   0xFF81AA   ROM
+.text                            607     R   0xFF8059   0xFF82B7   ROM
+.copy                              4     R   0xFF82B8   0xFF82BB   ROM
 .stack                           256   R/W     0x1000     0x10FF   RAM
 .__absdata_ADC0RBP__               3   N/I      0x621      0x623   .absSeg0
 .__absdata_ADC0CBP__               3   N/I      0x61D      0x61F   .absSeg1
@@ -316,7 +316,7 @@ Section Name                    Size  Type     From       To       Segment
 .vectSeg273_vect                   3     R   0xFFFFFD   0xFFFFFF   .vectSeg273
 
 Summary of section sizes per section type:
-READ_ONLY (R):         1AE (dec:      430)
+READ_ONLY (R):         2BF (dec:      703)
 READ_WRITE (R/W):      100 (dec:      256)
 NO_INIT (N/I):         156 (dec:      342)
 
@@ -337,8 +337,8 @@ MODULE:                 -- main_c.obj --
 MODULE:                 -- cpmu_c.obj --
 - PROCEDURES:
      clock_init                              FF806E      2C      44       1   .text       
-     calc_prs                                FF809A      D5     213       1   .text       
-     set_clock                               FF816F      38      56       1   .text       
+     calc_prs                                FF809A     1E6     486       1   .text       
+     set_clock                               FF8280      38      56       1   .text       
 - VARIABLES:
 MODULE:                 -- starts12z_c.obj --
 - PROCEDURES:
@@ -631,7 +631,7 @@ MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
   main_c.obj                                   0     21      0
-  cpmu_c.obj                                   0    313      0
+  cpmu_c.obj                                   0    586      0
   starts12z_c.obj                              0     62      0
   mc9s12zvl32_c.obj                          342      0      0
   other                                      256     30      4
@@ -1472,8 +1472,8 @@ OBJECT LIST SORTED BY ADDRESS
      _Startup                                FF802E      10      16       0   .init       
      main                                    FF8059      15      21       1   .text       
      clock_init                              FF806E      2C      44       1   .text       
-     calc_prs                                FF809A      D5     213       1   .text       
-     set_clock                               FF816F      38      56       1   .text       
+     calc_prs                                FF809A     1E6     486       1   .text       
+     set_clock                               FF8280      38      56       1   .text       
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -1486,9 +1486,10 @@ main_c.obj:
   .dwarf_type.void .dwarf.main .dwarf_line.main .dwarf_frame.main 
   .dwarf_pubnames.main .dwarf_aranges.main 
 cpmu_c.obj:
-  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.96 
-  .dwarf_typedef.clock_dividers .dwarf_type.unsigned char .dwarf.clock_init 
-  .dwarf.clock_init_ext .dwarf.calc_prs .dwarf.set_clock .dwarf_loc.clock_init 
+  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.147 
+  .dwarf_typedef.clock_dividers .dwarf_type.unsigned char 
+  .dwarf_type.unsigned int .dwarf.clock_init .dwarf.clock_init_ext 
+  .dwarf.calc_prs .dwarf.set_clock .dwarf_loc.clock_init 
   .dwarf_loc.clock_init_ext .dwarf_loc.calc_prs .dwarf_loc.set_clock 
   .dwarf_line.clock_init .dwarf_line.clock_init_ext .dwarf_line.calc_prs 
   .dwarf_line.set_clock .dwarf_frame.clock_init .dwarf_frame.clock_init_ext 
@@ -2079,7 +2080,7 @@ mc9s12zvl32_c.obj:
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xFF81A7 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xFF82B8 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
 
@@ -2120,5 +2121,5 @@ STATISTIC SECTION
 ExeFile:
 --------
 Number of blocks to be downloaded: 5
-Total size of all blocks to be downloaded: 430
+Total size of all blocks to be downloaded: 703
 

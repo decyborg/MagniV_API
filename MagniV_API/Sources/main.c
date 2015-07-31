@@ -10,7 +10,7 @@ void main(void) {
   EnableInterrupts;
   /* include your code here */
 
-  clock_init(25000000);
+  clock_init(8000000);
   for(;;) {
     __RESET_WATCHDOG();	/* feeds the dog */
     

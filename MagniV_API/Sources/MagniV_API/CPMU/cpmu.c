@@ -69,25 +69,29 @@ clock_dividers calc_prs(unsigned long FPLL, unsigned char ExtClock, unsigned lon
 		prs.vcofrq = SELECT_VCO_RANGE(FPLL);
 	} else{ 
 		unsigned long search_VCO, error;
-		unsigned int min_error = 0;
+		unsigned long min_error = 0;
 		clock_dividers min_prs_values;
 		unsigned char PostDiv, SynDiv;
 		/* Search for best prescaler values */
-		for(SynDiv = 0; SynDiv <= SYNDIV_MAX; ++SynDiv)
-			search_VCO == 2 * Fref * (SynDiv + 1);						/* Search through possible values of Fvco */
+		for(SynDiv = 0; SynDiv <= SYNDIV_MAX; ++SynDiv){
+			search_VCO = 2 * Fref * (SynDiv + 1);						/* Search through possible values of Fvco */
 			if((search_VCO >= VCO_MIN) && (search_VCO <= VCO_MAX)){		/* If VCO is within range */
 				for(PostDiv = 0; PostDiv <= POSTDIV_MAX; ++PostDiv){	/* Brute force through possible values of Postdiv for best match */
 					error = (search_VCO / (PostDiv + 1));
 					error = error - FPLL;
-					if(error == 0){
+					if(error == 0){										/* Exact match, store values and return */
 						prs.postdiv = PostDiv;
 						prs.syndiv = SynDiv;
 						prs.vcofrq = SELECT_VCO_RANGE(search_VCO);
 						return prs;
 					} else {
-						if(min_error == 0)								/* First time it enters the algorithm */
+						if(min_error == 0){								/* First time it enters the algorithm */
 							min_error = error;
-						if(error <= min_error){							/* The minimum possible error will be stored */
+							prs.postdiv = PostDiv;						/* Store corresponding values */
+							prs.syndiv = SynDiv;
+							prs.vcofrq = SELECT_VCO_RANGE(search_VCO);
+						}
+						if(error < min_error){							/* The minimum possible error will be stored */
 							min_error = error;							/* Update minimum error */
 							prs.postdiv = PostDiv;						/* Store corresponding values */
 							prs.syndiv = SynDiv;
@@ -96,6 +100,7 @@ clock_dividers calc_prs(unsigned long FPLL, unsigned char ExtClock, unsigned lon
 					}
 				}
 			}
+		}
 	}
 	
 	return prs;
