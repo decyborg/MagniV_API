@@ -55,55 +55,95 @@ clock_dividers calc_prs(unsigned long FPLL, unsigned char ExtClock, unsigned lon
 		if(!(ExtFreq % IRC)){	/* Check if ExtFreq is an integer multiple of IRC */
 			prs.refdiv = (ExtFreq / IRC) - 1;	/* Fref = Fosc / (REFDIV + 1) */
 			Fref = IRC;
-		} // TODO if not select the best Fref (integer multiple for FVCO)
+			prs.reffrq = SELECT_REF_RANGE(Fref);
+		} else {
+			unsigned char RefDiv;
+			unsigned long search_Fref, min_error = 0;
+			/* Look for best prescaler values */
+			for(RefDiv = 0; RefDiv <= REFDIV_MAX; ++RefDiv){
+				search_Fref = ExtFreq / (RefDiv + 1);
+				prs = search_prs(search_Fref, FPLL);
+				if(prs.error == 0){							/* Exact match found return values */
+					prs.refdiv = RefDiv;
+					prs.reffrq = SELECT_REF_RANGE(search_Fref);
+					return prs;
+				} else {
+					if(min_error == 0){						/* First time it enters */
+						min_error = prs.error;				/* Store values */
+						prs.refdiv = RefDiv;
+						prs.reffrq = SELECT_REF_RANGE(search_Fref);
+					}
+					if(prs.error < min_error){				/* A better value has been found */
+						min_error = prs.error;				/* Store values */
+						prs.refdiv = RefDiv;
+						prs.reffrq = SELECT_REF_RANGE(search_Fref);
+					}
+				}
+			}
+			return prs;										/* Values for external oscillator have been found, return */
+		}
 		
-		prs.reffrq = SELECT_REF_RANGE(Fref);
 	} else
 		Fref = IRC;
 	
-	/* Check if Fpll = Fvco is possible */
-	if((FPLL >= VCO_MIN) && (FPLL <= VCO_MAX)){
-		//TODO check for not an exact frequency
-		prs.postdiv = 0;		/* FPLL = FVCO / (POSTDIV + 1) -> FPLL = FVCO */
-		prs.syndiv = (FPLL / (2 * Fref)) - 1;
-		prs.vcofrq = SELECT_VCO_RANGE(FPLL);
-	} else{ 
-		unsigned long search_VCO, error;
-		unsigned long min_error = 0;
-		clock_dividers min_prs_values;
-		unsigned char PostDiv, SynDiv;
-		/* Search for best prescaler values */
-		for(SynDiv = 0; SynDiv <= SYNDIV_MAX; ++SynDiv){
-			search_VCO = 2 * Fref * (SynDiv + 1);						/* Search through possible values of Fvco */
-			if((search_VCO >= VCO_MIN) && (search_VCO <= VCO_MAX)){		/* If VCO is within range */
-				for(PostDiv = 0; PostDiv <= POSTDIV_MAX; ++PostDiv){	/* Brute force through possible values of Postdiv for best match */
-					error = (search_VCO / (PostDiv + 1));
-					error = error - FPLL;
-					if(error == 0){										/* Exact match, store values and return */
-						prs.postdiv = PostDiv;
-						prs.syndiv = SynDiv;
-						prs.vcofrq = SELECT_VCO_RANGE(search_VCO);
-						return prs;
-					} else {
-						if(min_error == 0){								/* First time it enters the algorithm */
-							min_error = error;
-							prs.postdiv = PostDiv;						/* Store corresponding values */
-							prs.syndiv = SynDiv;
-							prs.vcofrq = SELECT_VCO_RANGE(search_VCO);
-						}
-						if(error < min_error){							/* The minimum possible error will be stored */
-							min_error = error;							/* Update minimum error */
-							prs.postdiv = PostDiv;						/* Store corresponding values */
-							prs.syndiv = SynDiv;
-							prs.vcofrq = SELECT_VCO_RANGE(search_VCO);
-						}
+	prs = search_prs(Fref, FPLL);
+	prs.refdiv;
+	prs.reffrq;
+	
+	return prs;
+}
+
+/** Searches through possible values to find the best match
+ * 	
+ * 	Searches for the values of POSTDIV and SYNDIV given a certain frequency reference, this function only writes
+ * 	the following values on the clock_dividers structure:
+ * 		postdiv, syndiv, vcofrq and error.		 
+ * 
+ * 	@param[in] Fref Reference frequency used to find the values
+ * 	@param[in] FPLL Desired PLL frequency (bus frequency * 2) in hertz
+ * 	
+ * 	@return Structure with the found values and the error of the setup
+ * */
+clock_dividers search_prs(unsigned long Fref, unsigned long FPLL){
+	
+	unsigned long search_VCO, error;
+    unsigned long min_error = 0;
+	clock_dividers min_prs_values, prescalers;
+	unsigned char PostDiv, SynDiv;
+	
+	/* Search for best prescaler values */
+	for(SynDiv = 0; SynDiv <= SYNDIV_MAX; ++SynDiv){
+		search_VCO = 2 * Fref * (SynDiv + 1);						/* Search through possible values of Fvco */
+		if((search_VCO >= VCO_MIN) && (search_VCO <= VCO_MAX)){		/* If VCO is within range */
+			for(PostDiv = 0; PostDiv <= POSTDIV_MAX; ++PostDiv){	/* Brute force through possible values of Postdiv for best match */
+				error = (search_VCO / (PostDiv + 1));
+				error = error - FPLL;
+				if(error == 0){										/* Exact match, store values and return */
+					prescalers.postdiv = PostDiv;
+					prescalers.syndiv = SynDiv;
+					prescalers.vcofrq = SELECT_VCO_RANGE(search_VCO);
+					prescalers.error = error;
+					return prescalers;
+				} else {
+					if(min_error == 0){								/* First time it enters the algorithm */
+						min_error = error;
+						prescalers.postdiv = PostDiv;						/* Store corresponding values */
+						prescalers.syndiv = SynDiv;
+						prescalers.vcofrq = SELECT_VCO_RANGE(search_VCO);
+						prescalers.error = error;
+					}
+					if(error < min_error){									/* The minimum possible error will be stored */
+						min_error = error;									/* Update minimum error */
+						prescalers.postdiv = PostDiv;						/* Store corresponding values */
+						prescalers.syndiv = SynDiv;
+						prescalers.vcofrq = SELECT_VCO_RANGE(search_VCO);
+						prescalers.error = error;
 					}
 				}
 			}
 		}
 	}
-	
-	return prs;
+	return prescalers;
 }
 
 /** Set the clock registers
@@ -112,14 +152,20 @@ clock_dividers calc_prs(unsigned long FPLL, unsigned char ExtClock, unsigned lon
  * 	@param[in] ExtClock If an External oscillator is being used set this variable to TRUE (1) otherwise set to FALSE (0)
  * */
 void set_clock(clock_dividers ClockConfig, unsigned char ExtClock){
-	//TODO implement portable version
+	tCPMU *pCPMU;
+	pCPMU = (tCPMU*) CPMU_ADDR;
+	
 	if(ExtClock == TRUE){
-		CPMUOSC_OSCE = 1;
-		CPMUREFDIV_REFDIV = ClockConfig.refdiv;
+		pCPMU->osc.bit.osce = 1;
+		pCPMU->refdiv.bit.reffrq = ClockConfig.reffrq;
+		pCPMU->refdiv.bit.refdiv = ClockConfig.refdiv;
+		pCPMU->syndiv.bit.vcofrq = ClockConfig.vcofrq;
+		pCPMU->syndiv.bit.syndiv = ClockConfig.syndiv;
+		pCPMU->postdiv.bit.postdiv = ClockConfig.postdiv;
 	} else {
-		CPMUSYNR_VCOFRQ = ClockConfig.vcofrq;
-		CPMUSYNR_SYNDIV = ClockConfig.syndiv;
-		CPMUPOSTDIV_POSTDIV = ClockConfig.postdiv;
+		pCPMU->syndiv.bit.vcofrq = ClockConfig.vcofrq;
+		pCPMU->syndiv.bit.syndiv = ClockConfig.syndiv;
+		pCPMU->postdiv.bit.postdiv = ClockConfig.postdiv;
 	}
-	while(0 == CPMUIFLG_LOCK);
+	while(0 == pCPMU->iflg.bit.lockif);
 }
