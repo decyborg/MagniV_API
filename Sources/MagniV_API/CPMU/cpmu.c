@@ -26,9 +26,11 @@
  * 	
  * */
 void clock_init(unsigned long BusClock){
-	clock_dividers prescalers;
-	prescalers = calc_prs(BusClock*2, FALSE, 0);
-	set_clock(prescalers, FALSE);
+	if((BusClock*2) <= VCO_MAX){					/* Check if Bus frequency is within range of the device */
+		clock_dividers prescalers;
+		prescalers = calc_prs(BusClock*2, FALSE, 0);
+		set_clock(prescalers, FALSE);
+	}
 }
 
 /** Initializes the Bus clock at the desired speed using an external oscillator.
@@ -37,9 +39,11 @@ void clock_init(unsigned long BusClock){
  * 	@param[in] ExtFreq  Frequency of the external oscillator
  * */
 void clock_init_ext(unsigned long BusClock, unsigned long ExtFreq){
-	clock_dividers prescalers;
-	prescalers = calc_prs(BusClock*2, TRUE, ExtFreq);
-	set_clock(prescalers, TRUE);
+	if((BusClock*2) <= VCO_MAX){					/* Check if Bus frequency is within range of the device */
+		clock_dividers prescalers;
+		prescalers = calc_prs(BusClock*2, TRUE, ExtFreq);
+		set_clock(prescalers, TRUE);
+	}
 }
 /** @}*/
 
@@ -95,9 +99,9 @@ clock_dividers calc_prs(unsigned long FPLL, unsigned char ExtClock, unsigned lon
 	} else
 		Fref = IRC;
 	
-	prs = search_prs(Fref, FPLL);
-	prs.refdiv;
-	prs.reffrq;
+	prs = search_prs(Fref, FPLL);							/* Search Prescaler values that yield the best match */
+	prs.refdiv = 0;											/* Set to zero since this values won't be used */
+	prs.reffrq = 0;											/* Set to zero since this values won't be used */
 	
 	return prs;
 }

@@ -131,29 +131,29 @@ typedef union uCPMUOSC
 */
 typedef struct          	  /**< CPMU datastructure  */
   {
-  volatile tCPMUSYNR  syndiv;   	/**< CPMU Synthesizer Register */
-  volatile tCPMUREFDIV  refdiv;   	/**< CPMU Reference Divider Register */
-  volatile tCPMUPOSTDIV  postdiv;   /**< CPMU Post Divider Register */
-  volatile tCPMUIFLG  iflg;   		/**< CPMU Interrupt Flags Register */
-  volatile tREG08   unused_1;   	/**< unused data register */
-  volatile tREG08   unused_2;   	/**< unused data register */
-  volatile tREG08   unused_3;   	/**< unused data register */
-  volatile tREG08   unused_4;   	/**< unused data register */
-  volatile tREG08   unused_5;   	/**< unused data register */
-  volatile tREG08   unused_6;   	/**< unused data register */
-  volatile tREG08   unused_7;   	/**< unused data register */
-  volatile tREG08   unused_8;   	/**< unused data register */
-  volatile tREG08   unused_9;   	/**< unused data register */
-  volatile tREG08   unused_10;   	/**< unused data register */
-  volatile tREG08   unused_11;   	/**< unused data register */
-  volatile tREG08   unused_12;   	/**< unused data register */
-  volatile tREG08   unused_13;   	/**< unused data register */
-  volatile tREG08   unused_14;   	/**< unused data register */
-  volatile tREG08   unused_15;   	/**< unused data register */
-  volatile tREG08   unused_16;   	/**< unused data register */
-  volatile tREG08   unused_17;   	/**< unused data register */
-  volatile tREG08   unused_18;   	/**< unused data register */
-  volatile tCPMUOSC osc;   			/**< CPMU Oscillator register */
+  volatile tCPMUSYNR  	syndiv;   		/**< CPMU Synthesizer Register */
+  volatile tCPMUREFDIV  refdiv;   		/**< CPMU Reference Divider Register */
+  volatile tCPMUPOSTDIV postdiv;   		/**< CPMU Post Divider Register */
+  volatile tCPMUIFLG  	iflg;   		/**< CPMU Interrupt Flags Register */
+  volatile tREG08   	unused_1;   	/**< unused data register */
+  volatile tREG08   	unused_2;   	/**< unused data register */
+  volatile tREG08   	unused_3;   	/**< unused data register */
+  volatile tREG08   	unused_4;   	/**< unused data register */
+  volatile tREG08   	unused_5;   	/**< unused data register */
+  volatile tREG08   	unused_6;   	/**< unused data register */
+  volatile tREG08   	unused_7;   	/**< unused data register */
+  volatile tREG08   	unused_8;   	/**< unused data register */
+  volatile tREG08   	unused_9;   	/**< unused data register */
+  volatile tREG08   	unused_10;   	/**< unused data register */
+  volatile tREG08   	unused_11;   	/**< unused data register */
+  volatile tREG08   	unused_12;   	/**< unused data register */
+  volatile tREG08   	unused_13;   	/**< unused data register */
+  volatile tREG08   	unused_14;   	/**< unused data register */
+  volatile tREG08   	unused_15;   	/**< unused data register */
+  volatile tREG08   	unused_16;   	/**< unused data register */
+  volatile tREG08   	unused_17;   	/**< unused data register */
+  volatile tREG08   	unused_18;   	/**< unused data register */
+  volatile tCPMUOSC 	osc;   			/**< CPMU Oscillator register */
   }tCPMU;
 
 /* Prototypes */
