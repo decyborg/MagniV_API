@@ -93,6 +93,8 @@ OBJS_OS_FORMAT :=
 # Every subdirectory with source files must be described here
 SUBDIRS := \
 Sources \
+Sources/MagniV_API/common \
+Sources/MagniV_API/SCI \
 Sources/MagniV_API/CPMU \
 Project_Settings/Startup_Code \
 Lib \

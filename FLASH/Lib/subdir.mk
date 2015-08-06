@@ -30,7 +30,7 @@ OBJS_OS_FORMAT += \
 # Each subdirectory must supply rules for building sources it contributes
 Lib/mc9s12zvl32_c.obj: ../Lib/mc9s12zvl32.c
 	@echo 'Building file: $<'
-	@echo 'Executing target #4 $<'
+	@echo 'Executing target #6 $<'
 	@echo 'Invoking: S12Z Compiler'
 	"$(S12Z_ToolsDirEnv)/mwccs12lisa" -c @@"Lib/mc9s12zvl32.args" -o "Lib/mc9s12zvl32_c.obj" "$<" -MD -gccdep
 	@echo 'Finished building: $<'

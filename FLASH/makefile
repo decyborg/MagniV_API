@@ -2,7 +2,7 @@
 # Automatically-generated file. Do not edit!
 ################################################################################
 
-#Progress monitor hint: 4
+#Progress monitor hint: 6
 first : all
 -include ../makefile.init
 
@@ -15,6 +15,8 @@ RM := "$(GNU_Make_Install_DirEnv)/rm" -f
 -include sources.mk
 -include subdir.mk
 -include Sources/subdir.mk
+-include Sources/MagniV_API/common/subdir.mk
+-include Sources/MagniV_API/SCI/subdir.mk
 -include Sources/MagniV_API/CPMU/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk
 -include Lib/subdir.mk
@@ -75,14 +77,14 @@ all: warning-messages explicit-dependencies MagniV_API.elf
 # Tool invocations
 MagniV_API.elf: $(OBJS) $(USER_OBJS) ../Project_Settings/Linker_Files/mc9s12zvl32.prm
 	@echo 'Building target: $@'
-	@echo 'Executing target #5 $@'
+	@echo 'Executing target #7 $@'
 	@echo 'Invoking: S12Z Linker'
 	"$(S12Z_ToolsDirEnv)/linker" -ArgFile"MagniV_API.args" -O"MagniV_API.elf"
 	@echo 'Finished building target: $@'
 	@echo ' '
 
 MagniV_API.elf.s19: $(BBL_SRCS) $(EXECUTABLES)
-	@echo 'Executing target #6 $@'
+	@echo 'Executing target #8 $@'
 	@echo 'Invoking: S12Z Burner'
 	"$(S12Z_ToolsDirEnv)/burner" -ViewHidden -WmsgFob"%f%e:%l:%k:%d:%m\n" -f="$<" -env"ABS_FILE=$(strip $(EXECUTABLES_OS_FORMAT))"
 	@echo 'Finished building: $@'

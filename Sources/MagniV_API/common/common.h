@@ -70,4 +70,8 @@ typedef union uREG16   		/**< 16 bit register with word and byte access*/
   }tREG16;
 
 // TODO Error signals
+  
+  /* Prototypes */
+
+
 #endif /* COMMON_H_ */

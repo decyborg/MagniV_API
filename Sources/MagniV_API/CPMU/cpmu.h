@@ -164,7 +164,7 @@ clock_dividers search_prs(unsigned long Fref, unsigned long FPLL);
 void set_clock(clock_dividers ClockConfig, unsigned char ExtClock);
 
 #if (defined(_MC9S12ZVL32_H)) /* S12ZVL32 specific definitions */
-#define CPMU_ADDR 0x06C4
+#define CPMU_ADDR 0x06C4	/* Address in which CPMUSYNR is declared */
 #define VCO_MIN 32000000
 #define VCO_MID 48000000
 #define VCO_MAX 64000000
@@ -180,7 +180,7 @@ void set_clock(clock_dividers ClockConfig, unsigned char ExtClock);
 #endif /* END of S12ZVL32 specific definitions */
 
 #if (defined(_MC9S12VR64_H)) /* S12VR64 specific definitions */
-#define CPMU_ADDR 0x0034
+#define CPMU_ADDR 0x0034		/* Address in which CPMUSYNR is declared */
 #define VCO_MIN 32000000
 #define VCO_MID 48000000
 #define VCO_MAX 50000000
@@ -196,8 +196,8 @@ void set_clock(clock_dividers ClockConfig, unsigned char ExtClock);
 #endif /* END of S12VR64 specific definitions */
 
 #if (defined(_MC9S12ZVML128_H)) /* S12ZVML128 specific definitions */
-#define CPMU_ADDR 0x06C4
-#define VCO_MIN 32000000	/* Modify for more values */
+#define CPMU_ADDR 0x06C4		/* Address in which CPMUSYNR is declared */
+#define VCO_MIN 32000000	
 #define VCO_MIN_TH 48000000
 #define VCO_MID_TH  80000000
 #define VCO_MAX	   100000000
@@ -213,7 +213,7 @@ void set_clock(clock_dividers ClockConfig, unsigned char ExtClock);
 #endif /* END of S12ZVML128 specific definitions */
 
 #if (defined(_MC9S12ZVC192_H)) /* S12ZVC192 specific definitions */
-#define CPMU_ADDR 0x06C4
+#define CPMU_ADDR 0x06C4		/* Address in which CPMUSYNR is declared */
 #define VCO_MIN 32000000
 #define VCO_MID 48000000
 #define VCO_MAX 64000000
@@ -229,7 +229,7 @@ void set_clock(clock_dividers ClockConfig, unsigned char ExtClock);
 #endif /* END of S12ZVC192 specific definitions */
 
 #if (defined(_MC9S12ZVH_H)) /* S12ZVH specific definitions */
-#define CPMU_ADDR 0x06C4
+#define CPMU_ADDR 0x06C4		/* Address in which CPMUSYNR is declared */
 #define VCO_MIN 32000000
 #define VCO_MID 48000000
 #define VCO_MAX 64000000

@@ -3,6 +3,10 @@
 -i
 "$(ProjDirPath)/Project_Headers"
 -i
+"$(ProjDirPath)/Sources/MagniV_API/common"
+-i
+"$(ProjDirPath)/Sources/MagniV_API/SCI"
+-i
 "$(ProjDirPath)/Sources/MagniV_API"
 -i
 "$(ProjDirPath)/Sources/MagniV_API/CPMU"
