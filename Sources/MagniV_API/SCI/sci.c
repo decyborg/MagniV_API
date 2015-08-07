@@ -17,12 +17,16 @@
  * */
 #include "sci.h"
 
+/** \addtogroup Core Core API functions  
+ *  @{
+ */
 
 /**	Initializes the SCI interface to the desired baudrate
  * 
  * 	This function initializes the desired SCI channel to the desired baudrate. It must be called after the
  * 	bus clock has been set, since it uses the bus frequency to set the baudrate. The number of SCI channels is 
  * 	derivative dependent. Simply type SCIx, where x is the channel you would like to use e.g. SCI0 for channel 0.
+ * 	If the channel to be used is the one routed to the LINPHY only, it modifies the register to route the channel to external pins.
  * 	
  *	@param baudrate			Desired baudrate
  *	@param bus_frequency	Bus frequency at which the device is working
@@ -38,15 +42,15 @@ void sci_init(unsigned long baudrate, unsigned long bus_frequency, unsigned int 
 	pSCI->scibdl.byte = (unsigned char) SBR & 0xFF;
 	pSCI->scicr2.bit.te = 1;			/* Enable transmitter */
 	pSCI->scicr2.bit.re = 1;			/* Enable receiver */
-	if(sci_channel == SCI0){
-		MODRR0_S0L0RR = 0b110;		/* Enable SCI0 on external pins and not only on LINPHY */
+	if(sci_channel == SCI_ROUTED){
+		MODIFY_ROUTING = ROUTING_VALUE;		/* Enable SCI0 on external pins and not only on LINPHY */
 	}
 }
 
 /** Send a character through the selected SCI channel
  * 
  * 	@param character		Character to be send
- * 	@param sci_channel		SCI chañnnel that will send the character
+ * 	@param sci_channel		SCI channel that will send the character
  * */
 void put_char(char character, unsigned int sci_channel){
 	tSCI* pSCI = (tSCI*) sci_channel;
@@ -79,4 +83,5 @@ void send_string(char string[], unsigned int sci_channel){
 		put_char(string[i], sci_channel);
 	}
 }
+/** @}*/
 /** @}*/

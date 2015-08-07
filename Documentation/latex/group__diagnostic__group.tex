@@ -1,0 +1,14 @@
+\hypertarget{group__diagnostic__group}{}\section{Diagnostic services}
+\label{group__diagnostic__group}\index{Diagnostic services@{Diagnostic services}}
+
+
+Diagnostic services defines methods to implement diagnostic data transfer between a master node, respectively a diagnostic tester, and the slave nodes.  
+
+
+Diagnostic services defines methods to implement diagnostic data transfer between a master node, respectively a diagnostic tester, and the slave nodes. 
+
+Three different classes of diagnostic nodes are defined. Class I is using normal signalling and class I\+I and class I\+I\+I uses the transport layer.~\newline
+~\newline
+ The master node and the diagnostic tester are connected via a back-\/bone bus (e.\+g. C\+A\+N). The master node shall receive all diagnostic requests addressed to the slave nodes from the back-\/bone bus, and gateway them to the correct L\+I\+N cluster(s). Responses from the slave nodes shall be gatewayed back to the back-\/bone bus through the master node. ~\newline
+~\newline
+ All diagnostic requests and responses (services) addressed to the slave nodes can be routed in the network layer (i.\+e. no application layer routing), if the Diagnostic and Transport Layer Protocol of tester back-\/bone-\/bus master node fulfills the respective needs. In this case, the master node must implement the L\+I\+N transport protocol, see Transport Layer Specification, as well as the transport protocols used on the back-\/ bone busses (e.\+g. I\+S\+O15765-\/2 on C\+A\+N) 
