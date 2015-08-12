@@ -24,6 +24,7 @@
 typedef struct {
 	unsigned char SPPR;		/**< SPI Baud Rate Preselection Bits */
 	unsigned char SPR;		/**< SPI Baud Rate Selection Bits */
+	unsigned long error;	/**< Calculated error with the current configuration */
 }spi_divider;
 
 /* Prototypes */

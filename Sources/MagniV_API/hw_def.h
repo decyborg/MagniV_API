@@ -31,6 +31,7 @@
 #define SCI_ROUTED 				SCI0					/* Channel routed to LINPHY */
 #define MODIFY_ROUTING 			MODRR0_S0L0RR			/* Register that routes SCI0 to external pins */
 #define ROUTING_VALUE			0b110					/* Value to write to the register */
+/* SPI definitions */
 #endif /* END of S12ZVL32 specific definitions */
 
 #if (defined(_MC9S12VR64_H)) /* S12VR64 specific definitions */

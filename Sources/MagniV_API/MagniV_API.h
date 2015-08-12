@@ -10,6 +10,7 @@
 
 #include "cpmu.h"
 #include "sci.h"
+#include "spi.h"
 
 
 #endif /* MAGNIV_API_H_ */
