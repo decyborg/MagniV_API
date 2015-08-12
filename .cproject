@@ -53,6 +53,7 @@
 								</option>
 								<option id="com.freescale.s12z.toolchain.compiler.input.include.1704201503" name="Search User Paths (#include &quot;...&quot;)" superClass="com.freescale.s12z.toolchain.compiler.input.include" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/SPI&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/CPMU&quot;"/>
 								</option>
@@ -85,7 +86,7 @@
 								<option id="com.freescale.s12z.toolchain.compiler.warnings.enableWarnings.hidden.adjusted.1390122254.adjusted.737750533" superClass="com.freescale.s12z.toolchain.compiler.warnings.enableWarnings.hidden.adjusted.1390122254" value="com.freescale.s12z.toolchain.warnings.enableWarnings.custom.hidden" valueType="enumerated"/>
 								<option id="com.freescale.s12z.toolchain.compiler.input.include.1353092023" name="Search User Paths (#include &quot;...&quot;)" superClass="com.freescale.s12z.toolchain.compiler.input.include" valueType="includePath">
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Project_Headers&quot;"/>
-									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/common&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/SPI&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/SCI&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${ProjDirPath}/Sources/MagniV_API/CPMU&quot;"/>

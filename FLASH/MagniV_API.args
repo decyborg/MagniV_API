@@ -5,7 +5,7 @@
 -WmsgSd1100
 -WmsgSd1912 
 -Add("$(ProjDirPath)/FLASH/Sources/main_c.obj"
-"$(ProjDirPath)/FLASH/Sources/MagniV_API/common/common_c.obj"
+"$(ProjDirPath)/FLASH/Sources/MagniV_API/SPI/spi_c.obj"
 "$(ProjDirPath)/FLASH/Sources/MagniV_API/SCI/sci_c.obj"
 "$(ProjDirPath)/FLASH/Sources/MagniV_API/CPMU/cpmu_c.obj"
 "$(ProjDirPath)/FLASH/Project_Settings/Startup_Code/starts12z_c.obj"

@@ -7,6 +7,7 @@
 
 #ifndef COMMON_H_
 #define COMMON_H_
+#include "hw_def.h"
 
 /* Global definitions */
 #define TRUE  1

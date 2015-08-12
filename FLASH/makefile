@@ -15,7 +15,7 @@ RM := "$(GNU_Make_Install_DirEnv)/rm" -f
 -include sources.mk
 -include subdir.mk
 -include Sources/subdir.mk
--include Sources/MagniV_API/common/subdir.mk
+-include Sources/MagniV_API/SPI/subdir.mk
 -include Sources/MagniV_API/SCI/subdir.mk
 -include Sources/MagniV_API/CPMU/subdir.mk
 -include Project_Settings/Startup_Code/subdir.mk

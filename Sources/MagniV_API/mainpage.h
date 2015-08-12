@@ -12,7 +12,7 @@
 * <ul>
 * <li>@ref CPMU </li>
 * <li>@ref SCI </li>
-* <li>Serial Peripheral Interface</li>
+* <li>@ref SPI</li>
 * <li>Analog to Digital Converter</li>
 * <li>Timer Module</li>
 * <li>Pulse Width Modulator</li>
