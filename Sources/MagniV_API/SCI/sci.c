@@ -42,9 +42,11 @@ void sci_init(unsigned long baudrate, unsigned long bus_frequency, unsigned int 
 	pSCI->scibdl.byte = (unsigned char) SBR & 0xFF;
 	pSCI->scicr2.bit.te = 1;			/* Enable transmitter */
 	pSCI->scicr2.bit.re = 1;			/* Enable receiver */
+#if LIN_PHY_INTEGRATED
 	if(sci_channel == SCI_ROUTED){
 		MODIFY_ROUTING = ROUTING_VALUE;		/* Enable SCI0 on external pins and not only on LINPHY */
 	}
+#endif
 }
 
 /** Send a character through the selected SCI channel

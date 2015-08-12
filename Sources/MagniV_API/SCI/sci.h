@@ -212,45 +212,5 @@ void put_char(char character, unsigned int sci_channel);
 char get_char(unsigned int sci_channel);
 void send_string(char string[], unsigned int sci_channel);
 
-#if (defined(_MC9S12ZVL32_H)) /* S12ZVL32 specific definitions */
-#define SCI0 			0x0700
-#define SCI1 			0x0710
-#define SCI_ROUTED 		SCI0					/* Channel routed to LINPHY */
-#define MODIFY_ROUTING 	MODRR0_S0L0RR			/* Register that routes SCI0 to external pins */
-#define ROUTING_VALUE	0b110					/* Value to write to the register */
-#endif /* END of S12ZVL32 specific definitions */
-
-#if (defined(_MC9S12ZVML128_H)) /* S12ZVML128 specific definitions */
-#define SCI0 			0x0700
-#define SCI1 			0x0710
-#define SCI_ROUTED 		SCI0					/* Channel routed to LINPHY */
-#define MODIFY_ROUTING 	MODRR0_S0L0RR			/* Register that routes SCI0 to external pins */
-#define ROUTING_VALUE	0b110					/* Value to write to the register */
-#endif /* END of S12ZVML128 specific definitions */
-
-#if (defined(_MC9S12VR64_H)) /* S12VR64 specific definitions */
-#define SCI0 			0x00C8
-#define SCI1 			0x00D0
-#define SCI_ROUTED 		SCI0					/* Channel routed to LINPHY */
-#define MODIFY_ROUTING 	MODRR2_S0L0RR			/* Register that routes SCI0 to external pins */
-#define ROUTING_VALUE	0b1100					/* Value to write to the register */
-#endif /* END of S12VR64 specific definitions */
-
-#if (defined(_MC9S12ZVC192_H)) /* S12ZVC192 specific definitions */
-#define SCI0 			0x0700
-#define SCI1 			0x0710
-#define SCI_ROUTED 		0						/* This device does not have LINPHY */
-#define MODIFY_ROUTING 	MODRR0_SCI1RR			/* Dont care since there is not a LINPHY */
-#define ROUTING_VALUE	0						/* Dont care since there is not a LINPHY */
-#endif /* END of S12ZVC192 specific definitions */
-
-#if (defined(_MC9S12ZVH_H)) /* S12ZVH specific definitions */
-#define SCI0 			0x0700
-#define SCI1 			0x0710
-#define SCI_ROUTED 		0						/* This device does not have LINPHY */
-#define MODIFY_ROUTING 	MODRR2_SCI1RR			/* Dont care since there is not a LINPHY */
-#define ROUTING_VALUE	0						/* Dont care since there is not a LINPHY */
-#endif /* END of S12ZVH specific definitions */
-
 #endif /* SCI_H_ */
 /** @}*/
