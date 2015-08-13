@@ -119,7 +119,8 @@ clock_dividers calc_prs(unsigned long FPLL, unsigned char ExtClock, unsigned lon
  * */
 clock_dividers search_prs(unsigned long Fref, unsigned long FPLL){
 	
-	unsigned long search_VCO, error;
+	unsigned long search_VCO;
+	long error;
     unsigned long min_error = 0;
 	clock_dividers min_prs_values, prescalers;
 	unsigned char PostDiv, SynDiv;
@@ -131,6 +132,7 @@ clock_dividers search_prs(unsigned long Fref, unsigned long FPLL){
 			for(PostDiv = 0; PostDiv <= POSTDIV_MAX; ++PostDiv){	/* Brute force through possible values of Postdiv for best match */
 				error = (search_VCO / (PostDiv + 1));
 				error = error - FPLL;
+				error = error < 0 ? error * (-1) : error;			/* Error absolute value */
 				if(error == 0){										/* Exact match, store values and return */
 					prescalers.postdiv = PostDiv;
 					prescalers.syndiv = SynDiv;
