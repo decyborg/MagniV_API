@@ -26,7 +26,7 @@ Entry point: 0xFF802E (_Startup)
 _startupData is allocated at 0xFF803E and uses 20 Bytes
 extern struct _tagStartup {
   unsigned nofZeroOut     0
-  _Copy    *toCopyDownBeg 0xFF85F5
+  _Copy    *toCopyDownBeg 0xFF8602
   int      nofInitBodies  0
   _Cpp     *initBodies    0xFF8052
   int      nofFiniBodies  0
@@ -39,8 +39,8 @@ Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .init                             62     R   0xFF8000   0xFF803D   ROM
 .startData                        27     R   0xFF803E   0xFF8058   ROM
-.text                           1436     R   0xFF8059   0xFF85F4   ROM
-.copy                              4     R   0xFF85F5   0xFF85F8   ROM
+.text                           1449     R   0xFF8059   0xFF8601   ROM
+.copy                              4     R   0xFF8602   0xFF8605   ROM
 .stack                           256   R/W     0x1000     0x10FF   RAM
 .__absdata_ADC0RBP__               3   N/I      0x621      0x623   .absSeg0
 .__absdata_ADC0CBP__               3   N/I      0x61D      0x61F   .absSeg1
@@ -318,7 +318,7 @@ Section Name                    Size  Type     From       To       Segment
 .vectSeg273_vect                   3     R   0xFFFFFD   0xFFFFFF   .vectSeg273
 
 Summary of section sizes per section type:
-READ_ONLY (R):         5FC (dec:     1532)
+READ_ONLY (R):         609 (dec:     1545)
 READ_WRITE (R/W):      100 (dec:      256)
 NO_INIT (N/I):         156 (dec:      342)
 
@@ -334,20 +334,20 @@ OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 MODULE:                 -- main_c.obj --
 - PROCEDURES:
-     main                                    FF8059      38      56       1   .text       
+     main                                    FF8059      3A      58       1   .text       
 - VARIABLES:
 MODULE:                 -- spi_c.obj --
 - PROCEDURES:
-     spi_init_mst                            FF8091      45      69       1   .text       
-     spi_baud_cal                            FF80D6      DD     221       1   .text       
-     send_SPI                                FF81B3      1F      31       1   .text       
+     spi_init_mst                            FF8093      52      82       1   .text       
+     spi_baud_cal                            FF80E5      DD     221       1   .text       
+     send_SPI                                FF81C2      1D      29       1   .text       
 - VARIABLES:
 MODULE:                 -- cpmu_c.obj --
 - PROCEDURES:
-     clock_init                              FF81D2      3A      58       1   .text       
-     calc_prs                                FF820C     230     560       1   .text       
-     search_prs                              FF843C     141     321       2   .text       
-     set_clock                               FF857D      71     113       1   .text       
+     clock_init                              FF81DF      3A      58       1   .text       
+     calc_prs                                FF8219     230     560       1   .text       
+     search_prs                              FF8449     141     321       2   .text       
+     set_clock                               FF858A      71     113       1   .text       
 - VARIABLES:
 MODULE:                 -- starts12z_c.obj --
 - PROCEDURES:
@@ -636,15 +636,15 @@ MODULE:                 -- mc9s12zvl32_c.obj --
      _INT_CFADDR                                 17       1       1       0   .__absdata__INT_CFADDR__
 MODULE:                 -- rts12z.o (ansii.lib) --
 - PROCEDURES:
-     __copy                                  FF85EE       7       7       6   .text       
+     __copy                                  FF85FB       7       7       6   .text       
 - VARIABLES:
 
 *********************************************************************************************
 MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
-  main_c.obj                                   0     56      0
-  spi_c.obj                                    0    321      0
+  main_c.obj                                   0     58      0
+  spi_c.obj                                    0    332      0
   cpmu_c.obj                                   0   1052      0
   starts12z_c.obj                              0     62      0
   mc9s12zvl32_c.obj                          342      0      0
@@ -1486,15 +1486,15 @@ OBJECT LIST SORTED BY ADDRESS
      DoZeroOut                               FF8000      19      25       1   .init       
      DoCopyDown                              FF8019      15      21       1   .init       
      _Startup                                FF802E      10      16       0   .init       
-     main                                    FF8059      38      56       1   .text       
-     spi_init_mst                            FF8091      45      69       1   .text       
-     spi_baud_cal                            FF80D6      DD     221       1   .text       
-     send_SPI                                FF81B3      1F      31       1   .text       
-     clock_init                              FF81D2      3A      58       1   .text       
-     calc_prs                                FF820C     230     560       1   .text       
-     search_prs                              FF843C     141     321       2   .text       
-     set_clock                               FF857D      71     113       1   .text       
-     __copy                                  FF85EE       7       7       6   .text       
+     main                                    FF8059      3A      58       1   .text       
+     spi_init_mst                            FF8093      52      82       1   .text       
+     spi_baud_cal                            FF80E5      DD     221       1   .text       
+     send_SPI                                FF81C2      1D      29       1   .text       
+     clock_init                              FF81DF      3A      58       1   .text       
+     calc_prs                                FF8219     230     560       1   .text       
+     search_prs                              FF8449     141     321       2   .text       
+     set_clock                               FF858A      71     113       1   .text       
+     __copy                                  FF85FB       7       7       6   .text       
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
@@ -1509,16 +1509,16 @@ main_c.obj:
   .dwarf_type.void .dwarf_type.unsigned long .dwarf.main .dwarf_loc.main 
   .dwarf_line.main .dwarf_frame.main .dwarf_pubnames.main .dwarf_aranges.main 
 spi_c.obj:
-  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.67 .dwarf_type.68 
-  .dwarf_typedef.tSPI .dwarf_type.uSPICR1 .dwarf_typedef.tSPICR1 
-  .dwarf_type.unsigned char .dwarf_type.69 .dwarf_type.uSPICR2 
-  .dwarf_typedef.tSPICR2 .dwarf_type.70 .dwarf_type.uSPIBR 
-  .dwarf_typedef.tSPIBR .dwarf_type.71 .dwarf_type.uSPISR .dwarf_typedef.tSPISR 
-  .dwarf_type.72 .dwarf_type.uSPIDR .dwarf_typedef.tSPIDR 
-  .dwarf_type.unsigned short .dwarf_type.73 .dwarf_type.uREG08 
-  .dwarf_typedef.tREG08 .dwarf_type.74 .dwarf_type.75 
+  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.unsigned char 
+  .dwarf_type.69 .dwarf_type.70 .dwarf_typedef.tSPI .dwarf_type.uSPICR1 
+  .dwarf_typedef.tSPICR1 .dwarf_type.71 .dwarf_type.uSPICR2 
+  .dwarf_typedef.tSPICR2 .dwarf_type.72 .dwarf_type.uSPIBR 
+  .dwarf_typedef.tSPIBR .dwarf_type.73 .dwarf_type.uSPISR .dwarf_typedef.tSPISR 
+  .dwarf_type.74 .dwarf_type.uSPIDR .dwarf_typedef.tSPIDR 
+  .dwarf_type.unsigned short .dwarf_type.75 .dwarf_type.uREG08 
+  .dwarf_typedef.tREG08 .dwarf_type.76 .dwarf_type.77 
   .dwarf_typedef.spi_divider .dwarf_type.unsigned int .dwarf_type.long 
-  .dwarf_type.76 .dwarf.spi_init_mst .dwarf.spi_baud_cal .dwarf.send_SPI 
+  .dwarf_type.78 .dwarf.spi_init_mst .dwarf.spi_baud_cal .dwarf.send_SPI 
   .dwarf_loc.spi_init_mst .dwarf_loc.spi_baud_cal .dwarf_loc.send_SPI 
   .dwarf_line.spi_init_mst .dwarf_line.spi_baud_cal .dwarf_line.send_SPI 
   .dwarf_frame.spi_init_mst .dwarf_frame.spi_baud_cal .dwarf_frame.send_SPI 
@@ -2133,7 +2133,7 @@ rts12z.o (ansii.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xFF85F5 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xFF8602 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
 
@@ -2190,6 +2190,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 4
-Total size of all blocks to be downloaded: 1532
+Number of blocks to be downloaded: 5
+Total size of all blocks to be downloaded: 1545
 

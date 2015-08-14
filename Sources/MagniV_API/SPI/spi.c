@@ -15,8 +15,9 @@
  * 
  * 	@param	BusClock		Bus frequency of the device
  * 	@param	baudrate		Desired baudrate
+ * 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
  * */
-void spi_init_mst(unsigned long BusClock, unsigned long baudrate){
+void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width){
 	spi_divider spi_prs;
 	tSPI* pSPI = (tSPI*) SPI_ADDR;
 	
@@ -26,6 +27,7 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate){
 	pSPI->spicr1.bit.mstr = 1;								/* Select Master */
 	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
 	pSPI->spicr1.bit.ssoe = 1;
+	pSPI->spicr2.bit.xfrw = transfer_width;					/* Select between 8bit and 16bit transfer */
 	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
 
@@ -78,7 +80,7 @@ spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate){
  * 
  * @param data Data to be sent
  * */
-void send_SPI(unsigned char data){
+void send_SPI(word data){
 	tSPI* pSPI = (tSPI*) SPI_ADDR;
 	while(!pSPI->spisr.bit.sptef){};
 	pSPI->spidr.word = data;

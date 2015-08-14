@@ -143,10 +143,14 @@ typedef struct          	  /**< spi data structure  */
   volatile tSPIDR   spidr;    /**< SPI Data Register */
   }tSPI;
 
+/* Macro definition */
+#define BIT_8	0
+#define BIT_16	1
+  
 /* Prototypes */
-void spi_init_mst(unsigned long BusClock, unsigned long baudrate);
+void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width);
 spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate);
-void send_SPI(unsigned char data);
+void send_SPI(word data);
 
 #endif /* SPI_H_ */
 /** @}*/

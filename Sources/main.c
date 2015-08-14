@@ -12,11 +12,11 @@ void main(void) {
   clock_init(BUS_CLOCK);
   //sci_init(9600, BUS_CLOCK, SCI0);
   //send_string("Testing SCI module", SCI0);
-  spi_init_mst(BUS_CLOCK, 2500000);
+  spi_init_mst(BUS_CLOCK, 2500000, BIT_8);
   
   for(;;) {
 	  //put_char('A', SCI0);
-	  send_SPI(0x55);
+	  send_SPI(0x5555);
 	  for(delay = 0; delay < 500000; ++delay);
   } /* loop forever */
   /* please make sure that you never leave main */
