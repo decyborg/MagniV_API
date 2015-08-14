@@ -11,14 +11,22 @@
  */
 #include "spi.h"
 
-/**	Initializes the SPI based interface to the desired baudrate as a Master or as a Slave
+/**	Initializes the SPI interface to the desired baudrate as a Master
  * 
  * 	@param	BusClock		Bus frequency of the device
  * 	@param	baudrate		Desired baudrate
- * 	@param	Master_Slave	MASTER/SLAVE selection (by passing the a 1 or a 0 respectively)
  * */
-void spi_init(unsigned long BusClock, unsigned long baudrate, unsigned char Master_Slave){
+void spi_init_mst(unsigned long BusClock, unsigned long baudrate){
+	spi_divider spi_prs;
+	tSPI* pSPI = (tSPI*) SPI_ADDR;
 	
+	spi_prs = spi_baud_cal(BusClock, baudrate);				/* Calculate prescaler values */
+	pSPI->spibr.bit.SPR = spi_prs.SPR;						/* Set baud rate */
+	pSPI->spibr.bit.SPPR = spi_prs.SPPR;
+	pSPI->spicr1.bit.mstr = 1;								/* Select Master */
+	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
+	pSPI->spicr1.bit.ssoe = 1;
+	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
 
 /** Calculates the best dividers values for the desired frequency
@@ -64,5 +72,15 @@ spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate){
 	}
 	
 	return spi_pr;													/* Return found values that better match the baudrate */
+}
+
+/** Sends data through SPI
+ * 
+ * @param data Data to be sent
+ * */
+void send_SPI(unsigned char data){
+	tSPI* pSPI = (tSPI*) SPI_ADDR;
+	while(!pSPI->spisr.bit.sptef){};
+	pSPI->spidr.word = data;
 }
 /** @}*/

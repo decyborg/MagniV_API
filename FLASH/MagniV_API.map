@@ -14,7 +14,6 @@ FILE SECTION
 ---------------------------------------------------------------------------------------------
 main_c.obj                              Model: SMALL,         Lang: ANSI-C,        Compiler Version: C/C++ Compiler for S12/L-ISA v-5.0.38 build 14309
 spi_c.obj                               Model: SMALL,         Lang: ANSI-C,        Compiler Version: C/C++ Compiler for S12/L-ISA v-5.0.38 build 14309
-sci_c.obj                               Model: SMALL,         Lang: ANSI-C,        Compiler Version: C/C++ Compiler for S12/L-ISA v-5.0.38 build 14309
 cpmu_c.obj                              Model: SMALL,         Lang: ANSI-C,        Compiler Version: C/C++ Compiler for S12/L-ISA v-5.0.38 build 14309
 starts12z_c.obj                         Model: SMALL,         Lang: ANSI-C,        Compiler Version: C/C++ Compiler for S12/L-ISA v-5.0.38 build 14309
 mc9s12zvl32_c.obj                       Model: SMALL,         Lang: ANSI-C,        Compiler Version: C/C++ Compiler for S12/L-ISA v-5.0.38 build 14309
@@ -26,13 +25,12 @@ STARTUP SECTION
 Entry point: 0xFF802E (_Startup)
 _startupData is allocated at 0xFF803E and uses 20 Bytes
 extern struct _tagStartup {
-  unsigned nofZeroOut     1
-  _Range   pZeroOut       0x1100     19
-  _Copy    *toCopyDownBeg 0xFF863E
+  unsigned nofZeroOut     0
+  _Copy    *toCopyDownBeg 0xFF85F5
   int      nofInitBodies  0
-  _Cpp     *initBodies    0xFF8059
+  _Cpp     *initBodies    0xFF8052
   int      nofFiniBodies  0
-  _Cpp     *finiBodies    0xFF8059
+  _Cpp     *finiBodies    0xFF8052
 } _startupData;
 
 *********************************************************************************************
@@ -41,10 +39,9 @@ Section Name                    Size  Type     From       To       Segment
 ---------------------------------------------------------------------------------------------
 .init                             62     R   0xFF8000   0xFF803D   ROM
 .startData                        27     R   0xFF803E   0xFF8058   ROM
-.text                           1509     R   0xFF8059   0xFF863D   ROM
-.copy                             29     R   0xFF863E   0xFF865A   ROM
+.text                           1436     R   0xFF8059   0xFF85F4   ROM
+.copy                              4     R   0xFF85F5   0xFF85F8   ROM
 .stack                           256   R/W     0x1000     0x10FF   RAM
-.data                             19   R/W     0x1100     0x1112   RAM
 .__absdata_ADC0RBP__               3   N/I      0x621      0x623   .absSeg0
 .__absdata_ADC0CBP__               3   N/I      0x61D      0x61F   .absSeg1
 .__absdata_ECCDPTR__               3   N/I      0x3C7      0x3C9   .absSeg2
@@ -321,8 +318,8 @@ Section Name                    Size  Type     From       To       Segment
 .vectSeg273_vect                   3     R   0xFFFFFD   0xFFFFFF   .vectSeg273
 
 Summary of section sizes per section type:
-READ_ONLY (R):         65E (dec:     1630)
-READ_WRITE (R/W):      113 (dec:      275)
+READ_ONLY (R):         5FC (dec:     1532)
+READ_WRITE (R/W):      100 (dec:      256)
 NO_INIT (N/I):         156 (dec:      342)
 
 *********************************************************************************************
@@ -337,25 +334,20 @@ OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 MODULE:                 -- main_c.obj --
 - PROCEDURES:
-     main                                    FF8059      4B      75       1   .text       
+     main                                    FF8059      38      56       1   .text       
 - VARIABLES:
-     @31                                       1100      13      19       1   .data       
 MODULE:                 -- spi_c.obj --
 - PROCEDURES:
-     spi_baud_cal                            FF80A4      DD     221       1   .text       
-- VARIABLES:
-MODULE:                 -- sci_c.obj --
-- PROCEDURES:
-     sci_init                                FF8181      4A      74       1   .text       
-     put_char                                FF81CB      27      39       2   .text       
-     send_string                             FF81F2      29      41       1   .text       
+     spi_init_mst                            FF8091      45      69       1   .text       
+     spi_baud_cal                            FF80D6      DD     221       1   .text       
+     send_SPI                                FF81B3      1F      31       1   .text       
 - VARIABLES:
 MODULE:                 -- cpmu_c.obj --
 - PROCEDURES:
-     clock_init                              FF821B      3A      58       1   .text       
-     calc_prs                                FF8255     230     560       1   .text       
-     search_prs                              FF8485     141     321       2   .text       
-     set_clock                               FF85C6      71     113       1   .text       
+     clock_init                              FF81D2      3A      58       1   .text       
+     calc_prs                                FF820C     230     560       1   .text       
+     search_prs                              FF843C     141     321       2   .text       
+     set_clock                               FF857D      71     113       1   .text       
 - VARIABLES:
 MODULE:                 -- starts12z_c.obj --
 - PROCEDURES:
@@ -644,30 +636,27 @@ MODULE:                 -- mc9s12zvl32_c.obj --
      _INT_CFADDR                                 17       1       1       0   .__absdata__INT_CFADDR__
 MODULE:                 -- rts12z.o (ansii.lib) --
 - PROCEDURES:
-     __copy                                  FF8637       7       7       6   .text       
+     __copy                                  FF85EE       7       7       6   .text       
 - VARIABLES:
 
 *********************************************************************************************
 MODULE STATISTIC
   Name                                      Data   Code  Const
 ---------------------------------------------------------------------------------------------
-  main_c.obj                                  19     75      0
-  spi_c.obj                                    0    221      0
-  sci_c.obj                                    0    154      0
+  main_c.obj                                   0     56      0
+  spi_c.obj                                    0    321      0
   cpmu_c.obj                                   0   1052      0
   starts12z_c.obj                              0     62      0
   mc9s12zvl32_c.obj                          342      0      0
   rts12z.o (ansii.lib)                         0      7      0
-  other                                      256     30     29
+  other                                      256     30      4
 
 *********************************************************************************************
 SECTION USE IN OBJECT-ALLOCATION SECTION
 ---------------------------------------------------------------------------------------------
 SECTION: ".text"
-  main spi_baud_cal sci_init put_char send_string clock_init calc_prs 
-  search_prs set_clock __copy 
-SECTION: ".data"
-  @31 
+  main spi_init_mst spi_baud_cal send_SPI clock_init calc_prs search_prs 
+  set_clock __copy 
 SECTION: ".init"
   DoZeroOut DoCopyDown _Startup 
 SECTION: ".__absdata_ADC0RBP__"
@@ -1494,66 +1483,48 @@ OBJECT LIST SORTED BY ADDRESS
      _LP0SR                                     985       1       1       0   .__absdata__LP0SR__
      _LP0IE                                     986       1       1       0   .__absdata__LP0IE__
      _LP0IF                                     987       1       1       0   .__absdata__LP0IF__
-     @31                                       1100      13      19       1   .data       
      DoZeroOut                               FF8000      19      25       1   .init       
      DoCopyDown                              FF8019      15      21       1   .init       
      _Startup                                FF802E      10      16       0   .init       
-     main                                    FF8059      4B      75       1   .text       
-     spi_baud_cal                            FF80A4      DD     221       1   .text       
-     sci_init                                FF8181      4A      74       1   .text       
-     put_char                                FF81CB      27      39       2   .text       
-     send_string                             FF81F2      29      41       1   .text       
-     clock_init                              FF821B      3A      58       1   .text       
-     calc_prs                                FF8255     230     560       1   .text       
-     search_prs                              FF8485     141     321       2   .text       
-     set_clock                               FF85C6      71     113       1   .text       
-     __copy                                  FF8637       7       7       6   .text       
+     main                                    FF8059      38      56       1   .text       
+     spi_init_mst                            FF8091      45      69       1   .text       
+     spi_baud_cal                            FF80D6      DD     221       1   .text       
+     send_SPI                                FF81B3      1F      31       1   .text       
+     clock_init                              FF81D2      3A      58       1   .text       
+     calc_prs                                FF820C     230     560       1   .text       
+     search_prs                              FF843C     141     321       2   .text       
+     set_clock                               FF857D      71     113       1   .text       
+     __copy                                  FF85EE       7       7       6   .text       
 
 *********************************************************************************************
 UNUSED-OBJECTS SECTION
 ---------------------------------------------------------------------------------------------
 NOT USED PROCEDURES
-spi_c.obj:
-  spi_init 
-sci_c.obj:
-  get_char 
 cpmu_c.obj:
   clock_init_ext 
 rts12z.o (ansii.lib):
   __clear 
 NOT USED VARIABLES
 main_c.obj:
-  .dwarf_type.void .dwarf_type.33 .dwarf_typedef.spi_divider 
-  .dwarf_type.unsigned char .dwarf_type.unsigned long .dwarf.main 
-  .dwarf_loc.main .dwarf_line.main .dwarf_frame.main .dwarf_pubnames.main 
-  .dwarf_aranges.main 
+  .dwarf_type.void .dwarf_type.unsigned long .dwarf.main .dwarf_loc.main 
+  .dwarf_line.main .dwarf_frame.main .dwarf_pubnames.main .dwarf_aranges.main 
 spi_c.obj:
-  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.53 
-  .dwarf_typedef.spi_divider .dwarf_type.unsigned char .dwarf_type.unsigned int 
-  .dwarf_type.long .dwarf.spi_init .dwarf.spi_baud_cal .dwarf_loc.spi_init 
-  .dwarf_loc.spi_baud_cal .dwarf_line.spi_init .dwarf_line.spi_baud_cal 
-  .dwarf_frame.spi_init .dwarf_frame.spi_baud_cal .dwarf_pubnames.spi_init 
-  .dwarf_pubnames.spi_baud_cal .dwarf_aranges.spi_init 
-  .dwarf_aranges.spi_baud_cal 
-sci_c.obj:
-  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.unsigned int 
-  .dwarf_type.84 .dwarf_type.85 .dwarf_typedef.tSCI .dwarf_type.uSCIBDH 
-  .dwarf_typedef.tSCIBDH .dwarf_type.unsigned char .dwarf_type.86 
-  .dwarf_type.87 .dwarf_type.uSCIBDL .dwarf_typedef.tSCIBDL .dwarf_type.88 
-  .dwarf_type.89 .dwarf_type.uSCICR1 .dwarf_typedef.tSCICR1 .dwarf_type.90 
-  .dwarf_type.91 .dwarf_type.uSCICR2 .dwarf_typedef.tSCICR2 .dwarf_type.92 
-  .dwarf_type.uSCISR1 .dwarf_typedef.tSCISR1 .dwarf_type.93 .dwarf_type.uSCISR2 
-  .dwarf_typedef.tSCISR2 .dwarf_type.94 .dwarf_type.uSCIDRH 
-  .dwarf_typedef.tSCIDRH .dwarf_type.95 .dwarf_type.uREG08 
-  .dwarf_typedef.tREG08 .dwarf_type.96 .dwarf_type.char .dwarf_type.97 
-  .dwarf_type.98 .dwarf_type.99 .dwarf_type.int .dwarf.sci_init .dwarf.put_char 
-  .dwarf.get_char .dwarf.send_string .dwarf_loc.sci_init .dwarf_loc.put_char 
-  .dwarf_loc.get_char .dwarf_loc.send_string .dwarf_line.sci_init 
-  .dwarf_line.put_char .dwarf_line.get_char .dwarf_line.send_string 
-  .dwarf_frame.sci_init .dwarf_frame.put_char .dwarf_frame.get_char 
-  .dwarf_frame.send_string .dwarf_pubnames.sci_init .dwarf_pubnames.put_char 
-  .dwarf_pubnames.get_char .dwarf_pubnames.send_string .dwarf_aranges.sci_init 
-  .dwarf_aranges.put_char .dwarf_aranges.get_char .dwarf_aranges.send_string 
+  .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.67 .dwarf_type.68 
+  .dwarf_typedef.tSPI .dwarf_type.uSPICR1 .dwarf_typedef.tSPICR1 
+  .dwarf_type.unsigned char .dwarf_type.69 .dwarf_type.uSPICR2 
+  .dwarf_typedef.tSPICR2 .dwarf_type.70 .dwarf_type.uSPIBR 
+  .dwarf_typedef.tSPIBR .dwarf_type.71 .dwarf_type.uSPISR .dwarf_typedef.tSPISR 
+  .dwarf_type.72 .dwarf_type.uSPIDR .dwarf_typedef.tSPIDR 
+  .dwarf_type.unsigned short .dwarf_type.73 .dwarf_type.uREG08 
+  .dwarf_typedef.tREG08 .dwarf_type.74 .dwarf_type.75 
+  .dwarf_typedef.spi_divider .dwarf_type.unsigned int .dwarf_type.long 
+  .dwarf_type.76 .dwarf.spi_init_mst .dwarf.spi_baud_cal .dwarf.send_SPI 
+  .dwarf_loc.spi_init_mst .dwarf_loc.spi_baud_cal .dwarf_loc.send_SPI 
+  .dwarf_line.spi_init_mst .dwarf_line.spi_baud_cal .dwarf_line.send_SPI 
+  .dwarf_frame.spi_init_mst .dwarf_frame.spi_baud_cal .dwarf_frame.send_SPI 
+  .dwarf_pubnames.spi_init_mst .dwarf_pubnames.spi_baud_cal 
+  .dwarf_pubnames.send_SPI .dwarf_aranges.spi_init_mst 
+  .dwarf_aranges.spi_baud_cal .dwarf_aranges.send_SPI 
 cpmu_c.obj:
   .dwarf_type.void .dwarf_type.unsigned long .dwarf_type.268 
   .dwarf_typedef.clock_dividers .dwarf_type.unsigned char .dwarf_type.long 
@@ -2162,14 +2133,7 @@ rts12z.o (ansii.lib):
 *********************************************************************************************
 COPYDOWN SECTION
 ---------------------------------------------------------------------------------------------
-------- ROM-ADDRESS: 0xFF863E ---- SIZE       7 ---
-Filling bytes inserted
- 0000001200 1100
-------- ROM-ADDRESS: 0xFF8645 ---- RAM-ADDRESS: 0x1100 ---- SIZE      18 ---
-Name of initialized Object : @31
- 5465737469 6E67205343 49206D6F64
- 756C65
-------- ROM-ADDRESS: 0xFF8657 ---- SIZE       4 ---
+------- ROM-ADDRESS: 0xFF85F5 ---- SIZE       4 ---
 Filling bytes inserted
  00000000
 
@@ -2179,9 +2143,8 @@ OBJECT-DEPENDENCIES SECTION
 DoZeroOut                 USES _startupData 
 DoCopyDown                USES _startupData 
 _Startup                  USES __SEG_END_SSTACK DoZeroOut DoCopyDown main 
-main                      USES clock_init sci_init @31 send_string 
-                                spi_baud_cal put_char 
-send_string               USES put_char 
+main                      USES clock_init spi_init_mst send_SPI 
+spi_init_mst              USES spi_baud_cal 
 clock_init                USES calc_prs __copy set_clock 
 calc_prs                  USES search_prs __copy 
 search_prs                USES __copy 
@@ -2207,16 +2170,12 @@ DEPENDENCY TREE
  |  |  |  
  |  |  +- set_clock           
  |  |       
- |  +- sci_init            
- |  |    
- |  +- send_string         
+ |  +- spi_init_mst        
  |  |  | 
- |  |  +- put_char            
+ |  |  +- spi_baud_cal        
  |  |       
- |  +- spi_baud_cal        
- |  |    
- |  +- put_char             (see above)
- |     
+ |  +- send_SPI            
+ |       
  +- _Startup            
     | 
     +- DoZeroOut           
@@ -2231,6 +2190,6 @@ STATISTIC SECTION
 
 ExeFile:
 --------
-Number of blocks to be downloaded: 5
-Total size of all blocks to be downloaded: 1630
+Number of blocks to be downloaded: 4
+Total size of all blocks to be downloaded: 1532
 
