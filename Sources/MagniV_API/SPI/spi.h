@@ -151,6 +151,8 @@ typedef struct          	  /**< spi data structure  */
 void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width);
 spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate);
 void send_SPI(word data);
+void spi_init_slv(unsigned char transfer_width);
+word get_SPI(void);
 
 #endif /* SPI_H_ */
 /** @}*/

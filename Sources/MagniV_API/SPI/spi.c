@@ -32,7 +32,21 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char 
 	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
 
-/* TODO slave init */
+
+/**	Initializes the SPI interface as slave
+ * 
+ * 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
+ * */
+void spi_init_slv(unsigned char transfer_width){
+	spi_divider spi_prs;
+	tSPI* pSPI = (tSPI*) SPI_ADDR;
+	
+	pSPI->spicr1.bit.mstr = 0;								/* Select Slave */
+	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
+	pSPI->spicr1.bit.ssoe = 1;
+	pSPI->spicr2.bit.xfrw = transfer_width;					/* Select between 8bit and 16bit transfer */
+	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
+}
 
 /** Calculates the best dividers values for the desired frequency
  * 
@@ -89,5 +103,14 @@ void send_SPI(word data){
 	pSPI->spidr.word = data;
 }
 
-/*TODO: Receive function*/
+/** Receives data through SPI
+ * 
+ * @return Data received through SPI
+ * */
+word get_SPI(void){
+	tSPI* pSPI = (tSPI*) SPI_ADDR;
+	
+	while(!pSPI->spisr.bit.spif){};									/* Wait for data */
+	return pSPI->spidr.word;										/* Return received data */
 /** @}*/
+}
