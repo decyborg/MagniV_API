@@ -1,0 +1,139 @@
+\hypertarget{group___core}{}\section{Core A\+P\+I functions}
+\label{group___core}\index{Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___core_gaad29837daff06258028589fec8d69f31}{clock\+\_\+init} (unsigned long Bus\+Clock)
+\begin{DoxyCompactList}\small\item\em Initializes the Bus clock at the desired speed using the internal oscillator. \end{DoxyCompactList}\item 
+void \hyperlink{group___core_ga6c78aff94957c5e31bca34b4fd427844}{clock\+\_\+init\+\_\+ext} (unsigned long Bus\+Clock, unsigned long Ext\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the Bus clock at the desired speed using an external oscillator. \end{DoxyCompactList}\item 
+void \hyperlink{group___core_ga5064f416c84236092cef3147fe0036c1}{sci\+\_\+init} (unsigned long baudrate, unsigned long bus\+\_\+frequency, unsigned int sci\+\_\+channel)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+C\+I interface to the desired baudrate. \end{DoxyCompactList}\item 
+void \hyperlink{group___core_ga487c3bdee8a71648e5133e7104f2bddf}{put\+\_\+char} (char character, unsigned int sci\+\_\+channel)
+\begin{DoxyCompactList}\small\item\em Send a character through the selected S\+C\+I channel. \end{DoxyCompactList}\item 
+char \hyperlink{group___core_ga0b72a0d9b0c7a786c00aec3b91cf0e30}{get\+\_\+char} (unsigned int sci\+\_\+channel)
+\begin{DoxyCompactList}\small\item\em Function that waits until a character is received through the selected S\+C\+I channel. \end{DoxyCompactList}\item 
+void \hyperlink{group___core_ga9df467e6c221f71bbc6080694cc5c67c}{send\+\_\+string} (char string\mbox{[}$\,$\mbox{]}, unsigned int sci\+\_\+channel)
+\begin{DoxyCompactList}\small\item\em Sends a string through the desired channel. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___core_gaad29837daff06258028589fec8d69f31}{}\index{Core A\+P\+I functions@{Core A\+P\+I functions}!clock\+\_\+init@{clock\+\_\+init}}
+\index{clock\+\_\+init@{clock\+\_\+init}!Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsubsection[{clock\+\_\+init(unsigned long Bus\+Clock)}]{\setlength{\rightskip}{0pt plus 5cm}void clock\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock}
+\end{DoxyParamCaption}
+)}\label{group___core_gaad29837daff06258028589fec8d69f31}
+
+
+Initializes the Bus clock at the desired speed using the internal oscillator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Bus\+Clock} & Desired Bus Clock Frequency in hertz \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_ga6c78aff94957c5e31bca34b4fd427844}{}\index{Core A\+P\+I functions@{Core A\+P\+I functions}!clock\+\_\+init\+\_\+ext@{clock\+\_\+init\+\_\+ext}}
+\index{clock\+\_\+init\+\_\+ext@{clock\+\_\+init\+\_\+ext}!Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsubsection[{clock\+\_\+init\+\_\+ext(unsigned long Bus\+Clock, unsigned long Ext\+Freq)}]{\setlength{\rightskip}{0pt plus 5cm}void clock\+\_\+init\+\_\+ext (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock, }
+\item[{unsigned long}]{Ext\+Freq}
+\end{DoxyParamCaption}
+)}\label{group___core_ga6c78aff94957c5e31bca34b4fd427844}
+
+
+Initializes the Bus clock at the desired speed using an external oscillator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Bus\+Clock} & Desired Bus Clock Frequency in hertz \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Freq} & Frequency of the external oscillator \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_ga0b72a0d9b0c7a786c00aec3b91cf0e30}{}\index{Core A\+P\+I functions@{Core A\+P\+I functions}!get\+\_\+char@{get\+\_\+char}}
+\index{get\+\_\+char@{get\+\_\+char}!Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsubsection[{get\+\_\+char(unsigned int sci\+\_\+channel)}]{\setlength{\rightskip}{0pt plus 5cm}char get\+\_\+char (
+\begin{DoxyParamCaption}
+\item[{unsigned int}]{sci\+\_\+channel}
+\end{DoxyParamCaption}
+)}\label{group___core_ga0b72a0d9b0c7a786c00aec3b91cf0e30}
+
+
+Function that waits until a character is received through the selected S\+C\+I channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sci\+\_\+channel} & S\+C\+I channel that will receive the character \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Value of the received character 
+\end{DoxyReturn}
+\hypertarget{group___core_ga487c3bdee8a71648e5133e7104f2bddf}{}\index{Core A\+P\+I functions@{Core A\+P\+I functions}!put\+\_\+char@{put\+\_\+char}}
+\index{put\+\_\+char@{put\+\_\+char}!Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsubsection[{put\+\_\+char(char character, unsigned int sci\+\_\+channel)}]{\setlength{\rightskip}{0pt plus 5cm}void put\+\_\+char (
+\begin{DoxyParamCaption}
+\item[{char}]{character, }
+\item[{unsigned int}]{sci\+\_\+channel}
+\end{DoxyParamCaption}
+)}\label{group___core_ga487c3bdee8a71648e5133e7104f2bddf}
+
+
+Send a character through the selected S\+C\+I channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em character} & Character to be send \\
+\hline
+{\em sci\+\_\+channel} & S\+C\+I channel that will send the character \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_ga5064f416c84236092cef3147fe0036c1}{}\index{Core A\+P\+I functions@{Core A\+P\+I functions}!sci\+\_\+init@{sci\+\_\+init}}
+\index{sci\+\_\+init@{sci\+\_\+init}!Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsubsection[{sci\+\_\+init(unsigned long baudrate, unsigned long bus\+\_\+frequency, unsigned int sci\+\_\+channel)}]{\setlength{\rightskip}{0pt plus 5cm}void sci\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{baudrate, }
+\item[{unsigned long}]{bus\+\_\+frequency, }
+\item[{unsigned int}]{sci\+\_\+channel}
+\end{DoxyParamCaption}
+)}\label{group___core_ga5064f416c84236092cef3147fe0036c1}
+
+
+Initializes the S\+C\+I interface to the desired baudrate. 
+
+This function initializes the desired S\+C\+I channel to the desired baudrate. It must be called after the bus clock has been set, since it uses the bus frequency to set the baudrate. The number of S\+C\+I channels is derivative dependent. Simply type S\+C\+Ix, where x is the channel you would like to use e.\+g. S\+C\+I0 for channel 0. If the channel to be used is the one routed to the L\+I\+N\+P\+H\+Y only, it modifies the register to route the channel to external pins.
+
+
+\begin{DoxyParams}{Parameters}
+{\em baudrate} & Desired baudrate \\
+\hline
+{\em bus\+\_\+frequency} & Bus frequency at which the device is working \\
+\hline
+{\em sci\+\_\+channel} & S\+C\+I channel to be used \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_ga9df467e6c221f71bbc6080694cc5c67c}{}\index{Core A\+P\+I functions@{Core A\+P\+I functions}!send\+\_\+string@{send\+\_\+string}}
+\index{send\+\_\+string@{send\+\_\+string}!Core A\+P\+I functions@{Core A\+P\+I functions}}
+\subsubsection[{send\+\_\+string(char string[], unsigned int sci\+\_\+channel)}]{\setlength{\rightskip}{0pt plus 5cm}void send\+\_\+string (
+\begin{DoxyParamCaption}
+\item[{char}]{string\mbox{[}$\,$\mbox{]}, }
+\item[{unsigned int}]{sci\+\_\+channel}
+\end{DoxyParamCaption}
+)}\label{group___core_ga9df467e6c221f71bbc6080694cc5c67c}
+
+
+Sends a string through the desired channel. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em string} & String to be send \\
+\hline
+{\em sci\+\_\+channel} & S\+C\+I channel through which the string will be sent \\
+\hline
+\end{DoxyParams}

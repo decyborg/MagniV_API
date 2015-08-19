@@ -1,0 +1,85 @@
+\hypertarget{group__helper}{}\section{Helper functions}
+\label{group__helper}\index{Helper functions@{Helper functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structclock__dividers}{clock\+\_\+dividers} \hyperlink{group__helper_gab1ca661150fc5676794ddf0cca50ce8d}{calc\+\_\+prs} (unsigned long F\+P\+L\+L, unsigned char Ext\+Clock, unsigned long Ext\+Freq)
+\begin{DoxyCompactList}\small\item\em Calculate the prescaler values for the corresponding bus frequency. \end{DoxyCompactList}\item 
+\hyperlink{structclock__dividers}{clock\+\_\+dividers} \hyperlink{group__helper_gadfb20c94648c619f69d32ed3920faed0}{search\+\_\+prs} (unsigned long Fref, unsigned long F\+P\+L\+L)
+\begin{DoxyCompactList}\small\item\em Searches through possible values to find the best match. \end{DoxyCompactList}\item 
+void \hyperlink{group__helper_ga97250687e8ce6c1f1c893c93766afe1c}{set\+\_\+clock} (\hyperlink{structclock__dividers}{clock\+\_\+dividers} Clock\+Config, unsigned char Ext\+Clock)
+\begin{DoxyCompactList}\small\item\em Set the clock registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__helper_gab1ca661150fc5676794ddf0cca50ce8d}{}\index{Helper functions@{Helper functions}!calc\+\_\+prs@{calc\+\_\+prs}}
+\index{calc\+\_\+prs@{calc\+\_\+prs}!Helper functions@{Helper functions}}
+\subsubsection[{calc\+\_\+prs(unsigned long F\+P\+L\+L, unsigned char Ext\+Clock, unsigned long Ext\+Freq)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clock\+\_\+dividers} calc\+\_\+prs (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{F\+P\+L\+L, }
+\item[{unsigned char}]{Ext\+Clock, }
+\item[{unsigned long}]{Ext\+Freq}
+\end{DoxyParamCaption}
+)}\label{group__helper_gab1ca661150fc5676794ddf0cca50ce8d}
+
+
+Calculate the prescaler values for the corresponding bus frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em F\+P\+L\+L} & Desired P\+L\+L frequency (bus frequency $\ast$ 2) in hertz \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Clock} & If an External oscillator is being used set this variable to T\+R\+U\+E (1) otherwise set to F\+A\+L\+S\+E (0) \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Freq} & If an oscillator is being used pass the frequency of the oscillator, otherwise pass F\+A\+L\+S\+E (0)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A structure with the values of the prescalers 
+\end{DoxyReturn}
+\hypertarget{group__helper_gadfb20c94648c619f69d32ed3920faed0}{}\index{Helper functions@{Helper functions}!search\+\_\+prs@{search\+\_\+prs}}
+\index{search\+\_\+prs@{search\+\_\+prs}!Helper functions@{Helper functions}}
+\subsubsection[{search\+\_\+prs(unsigned long Fref, unsigned long F\+P\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clock\+\_\+dividers} search\+\_\+prs (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Fref, }
+\item[{unsigned long}]{F\+P\+L\+L}
+\end{DoxyParamCaption}
+)}\label{group__helper_gadfb20c94648c619f69d32ed3920faed0}
+
+
+Searches through possible values to find the best match. 
+
+Searches for the values of P\+O\+S\+T\+D\+I\+V and S\+Y\+N\+D\+I\+V given a certain frequency reference, this function only writes the following values on the \hyperlink{structclock__dividers}{clock\+\_\+dividers} structure\+: postdiv, syndiv, vcofrq and error.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Fref} & Reference frequency used to find the values \\
+\hline
+\mbox{\tt in}  & {\em F\+P\+L\+L} & Desired P\+L\+L frequency (bus frequency $\ast$ 2) in hertz\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Structure with the found values and the error of the setup 
+\end{DoxyReturn}
+\hypertarget{group__helper_ga97250687e8ce6c1f1c893c93766afe1c}{}\index{Helper functions@{Helper functions}!set\+\_\+clock@{set\+\_\+clock}}
+\index{set\+\_\+clock@{set\+\_\+clock}!Helper functions@{Helper functions}}
+\subsubsection[{set\+\_\+clock(clock\+\_\+dividers Clock\+Config, unsigned char Ext\+Clock)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+clock (
+\begin{DoxyParamCaption}
+\item[{{\bf clock\+\_\+dividers}}]{Clock\+Config, }
+\item[{unsigned char}]{Ext\+Clock}
+\end{DoxyParamCaption}
+)}\label{group__helper_ga97250687e8ce6c1f1c893c93766afe1c}
+
+
+Set the clock registers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Clock\+Config} & Holds the prescaler values to configure the clock \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Clock} & If an External oscillator is being used set this variable to T\+R\+U\+E (1) otherwise set to F\+A\+L\+S\+E (0) \\
+\hline
+\end{DoxyParams}

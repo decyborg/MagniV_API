@@ -1,0 +1,30 @@
+\hypertarget{group__bsp__group}{}\section{Board Support Package}
+\label{group__bsp__group}\index{Board Support Package@{Board Support Package}}
+
+
+B\+S\+P (Board Support Package) is the lowest layer of the L\+I\+N Stack.  
+
+
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___g_p_i_o__group}{G\+P\+I\+O interface}
+\begin{DoxyCompactList}\small\item\em G\+P\+I\+O interface uses G\+P\+I\+O pins to communicates with L\+I\+N network. \end{DoxyCompactList}\item 
+\hyperlink{group___s_l_i_c__group}{S\+L\+I\+C interface}
+\begin{DoxyCompactList}\small\item\em S\+L\+I\+C (Slave L\+I\+N Interface Controller) is one integrated module of M\+C\+U, it support M\+C\+U communicating with L\+I\+N network as slave node. \end{DoxyCompactList}\item 
+\hyperlink{group___s_c_i__group}{S\+C\+I interface}
+\begin{DoxyCompactList}\small\item\em This group contains functions that help physical module can communicate with L\+I\+N network through S\+C\+I module. \end{DoxyCompactList}\item 
+\hyperlink{group___u_a_r_t__group}{U\+A\+R\+T interface}
+\begin{DoxyCompactList}\small\item\em U\+A\+R\+T interface uses U\+A\+R\+T to communicate with L\+I\+N network. \end{DoxyCompactList}\item 
+\hyperlink{group___x_g_a_t_e__group}{X\+G\+A\+T\+E interface}
+\begin{DoxyCompactList}\small\item\em This interface use S\+C\+I to communicate with L\+I\+N network and X\+G\+A\+T\+E to process M\+C\+U\textquotesingle{}s interrupts. \end{DoxyCompactList}\item 
+\hyperlink{group__resync__group}{Resynchronize module}
+\begin{DoxyCompactList}\small\item\em Local interconnect network (L\+I\+N) is widely used standard for low cost automotive networks. \end{DoxyCompactList}\item 
+\hyperlink{group__autobaud__group}{Autobaud Feature}
+\begin{DoxyCompactList}\small\item\em A\+U\+T\+O\+B\+A\+U\+D is an extensive feature in L\+I\+N Driver which allows a peripheral M\+C\+U to detect baud rate of L\+I\+N bus and adapt its original baud rate to bus value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+B\+S\+P (Board Support Package) is the lowest layer of the L\+I\+N Stack. 
+
+B\+S\+P is comprised of codes, which implements the tasks dedicated to specific M\+C\+U platform\+: interrupt service routines, i/o port setup, memory handling and so on. There are four interfaces implemented within the stack package\+: S\+C\+I, S\+L\+I\+C, G\+P\+I\+O and S\+C\+I + X\+G\+A\+T\+E, U\+A\+R\+T. 

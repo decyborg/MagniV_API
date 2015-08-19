@@ -1,0 +1,18 @@
+# List of files to be ignored in a CodeWarrior Project
+# Contains files generated while building such as *.elf
+FLASH/
+
+# Contains header file for specified derivative
+Lib/
+Project_Headers/
+
+# Settings related with the project and not the source code
+Project_Settings/
+.settings/
+
+
+*.obj
+*.cproject
+*.cwGeneratedFileSetLog
+*.project
+ReferencedRSESystems.xml

@@ -1,0 +1,179 @@
+\hypertarget{group___c_p_m_u}{}\section{Clock, Reset and Power management unit}
+\label{group___c_p_m_u}\index{Clock, Reset and Power management unit@{Clock, Reset and Power management unit}}
+\subsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{group___core}{Core A\+P\+I functions}
+\item 
+\hyperlink{group__helper}{Helper functions}
+\end{DoxyCompactItemize}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{cpmu_8c}{cpmu.\+c}
+\begin{DoxyCompactList}\small\item\em Contains Clock and power management unit A\+P\+I routines for Magni\+V devices. \end{DoxyCompactList}\item 
+file \hyperlink{cpmu_8h}{cpmu.\+h}
+\begin{DoxyCompactList}\small\item\em Contains Clock and power management unit A\+P\+I routines for Magni\+V devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structclock__dividers}{clock\+\_\+dividers}
+\begin{DoxyCompactList}\small\item\em A structure that holds the divider values for the clock configuration. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_c_p_m_u_s_y_n_r}{u\+C\+P\+M\+U\+S\+Y\+N\+R}
+\begin{DoxyCompactList}\small\item\em C\+P\+M\+U Synthesizer Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_c_p_m_u_r_e_f_d_i_v}{u\+C\+P\+M\+U\+R\+E\+F\+D\+I\+V}
+\begin{DoxyCompactList}\small\item\em C\+P\+M\+U Reference Divider Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_c_p_m_u_p_o_s_t_d_i_v}{u\+C\+P\+M\+U\+P\+O\+S\+T\+D\+I\+V}
+\begin{DoxyCompactList}\small\item\em C\+P\+M\+U Post Divider Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_c_p_m_u_i_f_l_g}{u\+C\+P\+M\+U\+I\+F\+L\+G}
+\begin{DoxyCompactList}\small\item\em C\+P\+M\+U Interrupt Flags Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_c_p_m_u_o_s_c}{u\+C\+P\+M\+U\+O\+S\+C}
+\begin{DoxyCompactList}\small\item\em C\+P\+M\+U Oscillator register. \end{DoxyCompactList}\item 
+struct \hyperlink{structt_c_p_m_u}{t\+C\+P\+M\+U}
+\begin{DoxyCompactList}\small\item\em C\+P\+M\+U datastructure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___c_p_m_u_ga3df87df601ded076d7ee57e7200f6ad2}{}\#define \hyperlink{group___c_p_m_u_ga3df87df601ded076d7ee57e7200f6ad2}{I\+R\+C}~1000000\label{group___c_p_m_u_ga3df87df601ded076d7ee57e7200f6ad2}
+
+\begin{DoxyCompactList}\small\item\em Internal Reference Clock. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___c_p_m_u_ga09fdb8f378f7177fe7efcb84ce56dc4f}{}typedef union \hyperlink{unionu_c_p_m_u_s_y_n_r}{u\+C\+P\+M\+U\+S\+Y\+N\+R} {\bfseries t\+C\+P\+M\+U\+S\+Y\+N\+R}\label{group___c_p_m_u_ga09fdb8f378f7177fe7efcb84ce56dc4f}
+
+\item 
+\hypertarget{group___c_p_m_u_ga0d59cf5c260adccf39a5a1a8411c6aaf}{}typedef union \hyperlink{unionu_c_p_m_u_r_e_f_d_i_v}{u\+C\+P\+M\+U\+R\+E\+F\+D\+I\+V} {\bfseries t\+C\+P\+M\+U\+R\+E\+F\+D\+I\+V}\label{group___c_p_m_u_ga0d59cf5c260adccf39a5a1a8411c6aaf}
+
+\item 
+\hypertarget{group___c_p_m_u_gab79188554bbbeddd0770fb3a3cd2d637}{}typedef union \hyperlink{unionu_c_p_m_u_p_o_s_t_d_i_v}{u\+C\+P\+M\+U\+P\+O\+S\+T\+D\+I\+V} {\bfseries t\+C\+P\+M\+U\+P\+O\+S\+T\+D\+I\+V}\label{group___c_p_m_u_gab79188554bbbeddd0770fb3a3cd2d637}
+
+\item 
+\hypertarget{group___c_p_m_u_ga19bfa68ca49953534f3b3efa1682c911}{}typedef union \hyperlink{unionu_c_p_m_u_i_f_l_g}{u\+C\+P\+M\+U\+I\+F\+L\+G} {\bfseries t\+C\+P\+M\+U\+I\+F\+L\+G}\label{group___c_p_m_u_ga19bfa68ca49953534f3b3efa1682c911}
+
+\item 
+\hypertarget{group___c_p_m_u_ga730dc475c6839ab6aad5ca55af407165}{}typedef union \hyperlink{unionu_c_p_m_u_o_s_c}{u\+C\+P\+M\+U\+O\+S\+C} {\bfseries t\+C\+P\+M\+U\+O\+S\+C}\label{group___c_p_m_u_ga730dc475c6839ab6aad5ca55af407165}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___c_p_m_u_gaad29837daff06258028589fec8d69f31}{clock\+\_\+init} (unsigned long Bus\+Clock)
+\begin{DoxyCompactList}\small\item\em Initializes the Bus clock at the desired speed using the internal oscillator. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_p_m_u_ga6c78aff94957c5e31bca34b4fd427844}{clock\+\_\+init\+\_\+ext} (unsigned long Bus\+Clock, unsigned long Ext\+Freq)
+\begin{DoxyCompactList}\small\item\em Initializes the Bus clock at the desired speed using an external oscillator. \end{DoxyCompactList}\item 
+\hyperlink{structclock__dividers}{clock\+\_\+dividers} \hyperlink{group___c_p_m_u_gab1ca661150fc5676794ddf0cca50ce8d}{calc\+\_\+prs} (unsigned long F\+P\+L\+L, unsigned char Ext\+Clock, unsigned long Ext\+Freq)
+\begin{DoxyCompactList}\small\item\em Calculate the prescaler values for the corresponding bus frequency. \end{DoxyCompactList}\item 
+\hyperlink{structclock__dividers}{clock\+\_\+dividers} \hyperlink{group___c_p_m_u_gadfb20c94648c619f69d32ed3920faed0}{search\+\_\+prs} (unsigned long Fref, unsigned long F\+P\+L\+L)
+\begin{DoxyCompactList}\small\item\em Searches through possible values to find the best match. \end{DoxyCompactList}\item 
+void \hyperlink{group___c_p_m_u_ga97250687e8ce6c1f1c893c93766afe1c}{set\+\_\+clock} (\hyperlink{structclock__dividers}{clock\+\_\+dividers} Clock\+Config, unsigned char Ext\+Clock)
+\begin{DoxyCompactList}\small\item\em Set the clock registers. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___c_p_m_u_gab1ca661150fc5676794ddf0cca50ce8d}{}\index{Clock, Reset and Power management unit@{Clock, Reset and Power management unit}!calc\+\_\+prs@{calc\+\_\+prs}}
+\index{calc\+\_\+prs@{calc\+\_\+prs}!Clock, Reset and Power management unit@{Clock, Reset and Power management unit}}
+\subsubsection[{calc\+\_\+prs(unsigned long F\+P\+L\+L, unsigned char Ext\+Clock, unsigned long Ext\+Freq)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clock\+\_\+dividers} calc\+\_\+prs (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{F\+P\+L\+L, }
+\item[{unsigned char}]{Ext\+Clock, }
+\item[{unsigned long}]{Ext\+Freq}
+\end{DoxyParamCaption}
+)}\label{group___c_p_m_u_gab1ca661150fc5676794ddf0cca50ce8d}
+
+
+Calculate the prescaler values for the corresponding bus frequency. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em F\+P\+L\+L} & Desired P\+L\+L frequency (bus frequency $\ast$ 2) in hertz \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Clock} & If an External oscillator is being used set this variable to T\+R\+U\+E (1) otherwise set to F\+A\+L\+S\+E (0) \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Freq} & If an oscillator is being used pass the frequency of the oscillator, otherwise pass F\+A\+L\+S\+E (0)\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A structure with the values of the prescalers 
+\end{DoxyReturn}
+\hypertarget{group___c_p_m_u_gaad29837daff06258028589fec8d69f31}{}\index{Clock, Reset and Power management unit@{Clock, Reset and Power management unit}!clock\+\_\+init@{clock\+\_\+init}}
+\index{clock\+\_\+init@{clock\+\_\+init}!Clock, Reset and Power management unit@{Clock, Reset and Power management unit}}
+\subsubsection[{clock\+\_\+init(unsigned long Bus\+Clock)}]{\setlength{\rightskip}{0pt plus 5cm}void clock\+\_\+init (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock}
+\end{DoxyParamCaption}
+)}\label{group___c_p_m_u_gaad29837daff06258028589fec8d69f31}
+
+
+Initializes the Bus clock at the desired speed using the internal oscillator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Bus\+Clock} & Desired Bus Clock Frequency in hertz \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___c_p_m_u_ga6c78aff94957c5e31bca34b4fd427844}{}\index{Clock, Reset and Power management unit@{Clock, Reset and Power management unit}!clock\+\_\+init\+\_\+ext@{clock\+\_\+init\+\_\+ext}}
+\index{clock\+\_\+init\+\_\+ext@{clock\+\_\+init\+\_\+ext}!Clock, Reset and Power management unit@{Clock, Reset and Power management unit}}
+\subsubsection[{clock\+\_\+init\+\_\+ext(unsigned long Bus\+Clock, unsigned long Ext\+Freq)}]{\setlength{\rightskip}{0pt plus 5cm}void clock\+\_\+init\+\_\+ext (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock, }
+\item[{unsigned long}]{Ext\+Freq}
+\end{DoxyParamCaption}
+)}\label{group___c_p_m_u_ga6c78aff94957c5e31bca34b4fd427844}
+
+
+Initializes the Bus clock at the desired speed using an external oscillator. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Bus\+Clock} & Desired Bus Clock Frequency in hertz \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Freq} & Frequency of the external oscillator \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___c_p_m_u_gadfb20c94648c619f69d32ed3920faed0}{}\index{Clock, Reset and Power management unit@{Clock, Reset and Power management unit}!search\+\_\+prs@{search\+\_\+prs}}
+\index{search\+\_\+prs@{search\+\_\+prs}!Clock, Reset and Power management unit@{Clock, Reset and Power management unit}}
+\subsubsection[{search\+\_\+prs(unsigned long Fref, unsigned long F\+P\+L\+L)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf clock\+\_\+dividers} search\+\_\+prs (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Fref, }
+\item[{unsigned long}]{F\+P\+L\+L}
+\end{DoxyParamCaption}
+)}\label{group___c_p_m_u_gadfb20c94648c619f69d32ed3920faed0}
+
+
+Searches through possible values to find the best match. 
+
+Searches for the values of P\+O\+S\+T\+D\+I\+V and S\+Y\+N\+D\+I\+V given a certain frequency reference, this function only writes the following values on the \hyperlink{structclock__dividers}{clock\+\_\+dividers} structure\+: postdiv, syndiv, vcofrq and error.
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Fref} & Reference frequency used to find the values \\
+\hline
+\mbox{\tt in}  & {\em F\+P\+L\+L} & Desired P\+L\+L frequency (bus frequency $\ast$ 2) in hertz\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Structure with the found values and the error of the setup 
+\end{DoxyReturn}
+\hypertarget{group___c_p_m_u_ga97250687e8ce6c1f1c893c93766afe1c}{}\index{Clock, Reset and Power management unit@{Clock, Reset and Power management unit}!set\+\_\+clock@{set\+\_\+clock}}
+\index{set\+\_\+clock@{set\+\_\+clock}!Clock, Reset and Power management unit@{Clock, Reset and Power management unit}}
+\subsubsection[{set\+\_\+clock(clock\+\_\+dividers Clock\+Config, unsigned char Ext\+Clock)}]{\setlength{\rightskip}{0pt plus 5cm}void set\+\_\+clock (
+\begin{DoxyParamCaption}
+\item[{{\bf clock\+\_\+dividers}}]{Clock\+Config, }
+\item[{unsigned char}]{Ext\+Clock}
+\end{DoxyParamCaption}
+)}\label{group___c_p_m_u_ga97250687e8ce6c1f1c893c93766afe1c}
+
+
+Set the clock registers. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Clock\+Config} & Holds the prescaler values to configure the clock \\
+\hline
+\mbox{\tt in}  & {\em Ext\+Clock} & If an External oscillator is being used set this variable to T\+R\+U\+E (1) otherwise set to F\+A\+L\+S\+E (0) \\
+\hline
+\end{DoxyParams}
