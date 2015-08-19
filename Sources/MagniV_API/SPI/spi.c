@@ -9,6 +9,7 @@
  *	@author Manuel Rodriguez
  *  
  */
+
 #include "spi.h"
 
 /**	Initializes the SPI interface to the desired baudrate as a Master
@@ -30,6 +31,8 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char 
 	pSPI->spicr2.bit.xfrw = transfer_width;					/* Select between 8bit and 16bit transfer */
 	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
+
+/* TODO slave init */
 
 /** Calculates the best dividers values for the desired frequency
  * 
@@ -85,4 +88,6 @@ void send_SPI(word data){
 	while(!pSPI->spisr.bit.sptef){};
 	pSPI->spidr.word = data;
 }
+
+/*TODO: Receive function*/
 /** @}*/
