@@ -11,6 +11,7 @@
  */
 
 #include "spi.h"
+/* TODO Add Polarity and Phase selection */
 
 /**	Initializes the SPI interface to the desired baudrate as a Master
  * 
@@ -31,6 +32,7 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char 
 	pSPI->spicr2.bit.xfrw = transfer_width;					/* Select between 8bit and 16bit transfer */
 	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
+
 
 
 /**	Initializes the SPI interface as slave
@@ -112,5 +114,7 @@ word get_SPI(void){
 	
 	while(!pSPI->spisr.bit.spif){};									/* Wait for data */
 	return pSPI->spidr.word;										/* Return received data */
-/** @}*/
 }
+
+/* TODO SPI Transfer */
+/** @}*/
