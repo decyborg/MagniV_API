@@ -144,14 +144,19 @@ typedef struct          	  /**< spi data structure  */
   }tSPI;
 
 /* Macro definition */
-#define BIT_8	0
-#define BIT_16	1
+#define BIT_8		0
+#define BIT_16		1
+#define SPI_MODE0	0
+#define SPI_MODE1	1
+#define SPI_MODE2	2
+#define SPI_MODE3	3
+  
   
 /* Prototypes */
-void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width);
+void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width, unsigned char SPI_MODE);
+void spi_init_slv(unsigned char transfer_width, unsigned char SPI_MODE);
 spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate);
 void send_SPI(word data);
-void spi_init_slv(unsigned char transfer_width);
 word get_SPI(void);
 
 #endif /* SPI_H_ */

@@ -11,21 +11,24 @@
  */
 
 #include "spi.h"
-/* TODO Add Polarity and Phase selection */
+
 
 /**	Initializes the SPI interface to the desired baudrate as a Master
  * 
  * 	@param	BusClock		Bus frequency of the device
  * 	@param	baudrate		Desired baudrate
  * 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
+* 	@param  SPI_MODE        Selects the Clock polarity and Clock phase
  * */
-void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width){
+void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width, unsigned char SPI_MODE){
 	spi_divider spi_prs;
 	tSPI* pSPI = (tSPI*) SPI_ADDR;
 	
 	spi_prs = spi_baud_cal(BusClock, baudrate);				/* Calculate prescaler values */
 	pSPI->spibr.bit.SPR = spi_prs.SPR;						/* Set baud rate */
 	pSPI->spibr.bit.SPPR = spi_prs.SPPR;
+	pSPI->spicr1.bit.cpol = SPI_MODE & 0b01;				/* Select Clock Polarity */
+	pSPI->spicr1.bit.cpha = SPI_MODE & 0b10;				/* Select Clock Phase */
 	pSPI->spicr1.bit.mstr = 1;								/* Select Master */
 	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
 	pSPI->spicr1.bit.ssoe = 1;
@@ -38,14 +41,17 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char 
 /**	Initializes the SPI interface as slave
  * 
  * 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
+ * 	@param  SPI_MODE        Selects the Clock polarity and Clock phase
  * */
-void spi_init_slv(unsigned char transfer_width){
+void spi_init_slv(unsigned char transfer_width, unsigned char SPI_MODE){
 	spi_divider spi_prs;
 	tSPI* pSPI = (tSPI*) SPI_ADDR;
 	
 	pSPI->spicr1.bit.mstr = 0;								/* Select Slave */
 	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
 	pSPI->spicr1.bit.ssoe = 1;
+	pSPI->spicr1.bit.cpol = SPI_MODE & 0b01;				/* Select Clock Polarity */
+	pSPI->spicr1.bit.cpha = SPI_MODE & 0b10;				/* Select Clock Phase */
 	pSPI->spicr2.bit.xfrw = transfer_width;					/* Select between 8bit and 16bit transfer */
 	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
@@ -116,5 +122,15 @@ word get_SPI(void){
 	return pSPI->spidr.word;										/* Return received data */
 }
 
-/* TODO SPI Transfer */
+/** Sends and receives data through the SPI interface
+ * 
+ * @param data Data to be send through the SPI interface
+ * 
+ * @return Data received through the SPI interface
+ * */
+word tranfer_SPI(word data){
+	send_SPI(data);													/* Send data */
+	return get_SPI();												/* Receive data */
+}
+
 /** @}*/

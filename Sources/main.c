@@ -14,7 +14,7 @@ void main(void) {
   //sci_init(9600, BUS_CLOCK, SCI0);
   //send_string("Testing SCI module", SCI0);
   //spi_init_mst(BUS_CLOCK, 2500000, BIT_16);
-  spi_init_slv(BIT_16);
+  spi_init_slv(BIT_16, SPI_MODE0);
   
   for(;;) {
 	  //put_char('A', SCI0);
