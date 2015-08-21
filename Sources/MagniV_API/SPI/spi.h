@@ -158,6 +158,7 @@ void spi_init_slv(unsigned char transfer_width, unsigned char SPI_MODE);
 spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate);
 void send_SPI(word data);
 word get_SPI(void);
+word tranfer_SPI(word data);
 
 #endif /* SPI_H_ */
 /** @}*/

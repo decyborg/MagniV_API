@@ -20,7 +20,7 @@ void main(void) {
 	  //put_char('A', SCI0);
 	  //send_SPI(0x5555);
 	  spi_data = get_SPI();
-	  for(delay = 0; delay < 500000; ++delay);
+	  for(delay = 0; delay < 500000; ++delay){};
   } /* loop forever */
   /* please make sure that you never leave main */
 }

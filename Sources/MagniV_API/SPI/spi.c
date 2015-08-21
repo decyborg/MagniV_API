@@ -13,11 +13,60 @@
 #include "spi.h"
 
 
-/**	Initializes the SPI interface to the desired baudrate as a Master
+/**	Initializes the SPI interface to the desired baudrate as a Master.
  * 
- * 	@param	BusClock		Bus frequency of the device
- * 	@param	baudrate		Desired baudrate
- * 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
+ * 	This functions initializes the SPI interface to act as a master device, it sets
+ * 	the frequency of the SPI clock to the best possible match. It allows to select between
+ * 	8-bit transfers or 16-bit transfers by passing the macro BIT_8 or BIT_16 respectively.
+ * 	The SPI_MODE parameter selects the Clock Polarity and Clock Phase for the communication protocol.
+ * 	In order for an SPI transaction to occur successfully both master and slave must have the same
+ * 	Clock Polarity and Clock phase configuration.
+ * 	The Clock Polarity and Clock Phase configuration can be achieved as follows
+ * <table border="1">
+ * <tr>
+ *   <td>SPI_MODE</td>
+ *   <td>Clock Phase</td>
+ *   <td>Clock Polarity</td>		
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE0</td>
+ *   <td>0</td>		
+ *   <td>0</td>
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE1</td>
+ *   <td>0</td>		
+ *   <td>1</td>
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE2</td>
+ *   <td>1</td>		
+ *   <td>0</td>
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE3</td>
+ *   <td>1</td>		
+ *   <td>1</td>
+ * </tr>
+ * </table>
+ * By setting the Clock Polarity to zero active-high clocks are selected. In idle state SCK is low.
+ * 
+ * By setting the Clock Polarity to one active-low clocks selected. In idle state SCK is high.
+ * 
+ * By setting the Clock Phase to zero sampling of data occurs at odd edges (1,3,5,...) of the SCK clock.
+ * 
+ * By setting the Clock Phase to one sampling of data occurs at even edges (2,4,6,...) of the SCK clock.
+ * 
+ * For more information refer to the Reference Manual of your device.
+ * The following example sets the SPI clock to a frequency of 12.5MHz with a Bus frequency of 25MHz, selecting
+ * an 8-Bit transfer, Clock Polarity with active-high clocks and clock phase with sampling of data at odd edges:
+ * @code
+ * 	spi_init_mst(25000000, 12500000, BIT_8, SPI_MODE0);
+ * @endcode
+ * 
+* 	@param	BusClock		Bus frequency of the device
+* 	@param	baudrate		Desired baudrate
+* 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
 * 	@param  SPI_MODE        Selects the Clock polarity and Clock phase
  * */
 void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char transfer_width, unsigned char SPI_MODE){
@@ -38,10 +87,59 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char 
 
 
 
-/**	Initializes the SPI interface as slave
+/**	Initializes the SPI interface as slave.
  * 
- * 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
- * 	@param  SPI_MODE        Selects the Clock polarity and Clock phase
+ * 	This functions initializes the SPI interface to act as a slave device. It allows to select between
+ * 	8-bit transfers or 16-bit transfers by passing the macro BIT_8 or BIT_16 respectively.
+ * 	The SPI_MODE parameter selects the Clock Polarity and Clock Phase for the communication protocol.
+ * 	In order for an SPI transaction to occur successfully both master and slave must have the same
+ * 	Clock Polarity and Clock phase configuration.
+ * 	The Clock Polarity and Clock Phase configuration can be achieved as follows
+ * <table border="1">
+ * <tr>
+ *   <td>SPI_MODE</td>
+ *   <td>Clock Phase</td>
+ *   <td>Clock Polarity</td>		
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE0</td>
+ *   <td>0</td>		
+ *   <td>0</td>
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE1</td>
+ *   <td>0</td>		
+ *   <td>1</td>
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE2</td>
+ *   <td>1</td>		
+ *   <td>0</td>
+ * </tr>
+ * <tr>
+ *   <td>SPI_MODE3</td>
+ *   <td>1</td>		
+ *   <td>1</td>
+ * </tr>
+ * </table>
+ * By setting the Clock Polarity to zero active-high clocks are selected. In idle state SCK is low.
+ * 
+ * By setting the Clock Polarity to one active-low clocks selected. In idle state SCK is high.
+ * 
+ * By setting the Clock Phase to zero sampling of data occurs at odd edges (1,3,5,...) of the SCK clock.
+ * 
+ * By setting the Clock Phase to one sampling of data occurs at even edges (2,4,6,...) of the SCK clock.
+ * 
+ * For more information refer to the Reference Manual of your device.
+ * The following example selects an 8-Bit transfer, Clock Polarity with active-high clocks and clock phase
+ * with sampling of data at odd edges:
+ * @code
+ * 	spi_init_slv(BIT_8, SPI_MODE0);
+ * @endcode
+ * 
+ *  
+* 	@param  transfer_width  Select between 8bit transfer and 16bit transfer
+* 	@param  SPI_MODE        Selects the Clock polarity and Clock phase
  * */
 void spi_init_slv(unsigned char transfer_width, unsigned char SPI_MODE){
 	spi_divider spi_prs;

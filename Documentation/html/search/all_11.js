@@ -32,5 +32,10 @@ var searchData=
   ['uscicr2',['uSCICR2',['../unionu_s_c_i_c_r2.html',1,'']]],
   ['uscidrh',['uSCIDRH',['../unionu_s_c_i_d_r_h.html',1,'']]],
   ['uscisr1',['uSCISR1',['../unionu_s_c_i_s_r1.html',1,'']]],
-  ['uscisr2',['uSCISR2',['../unionu_s_c_i_s_r2.html',1,'']]]
+  ['uscisr2',['uSCISR2',['../unionu_s_c_i_s_r2.html',1,'']]],
+  ['uspibr',['uSPIBR',['../unionu_s_p_i_b_r.html',1,'']]],
+  ['uspicr1',['uSPICR1',['../unionu_s_p_i_c_r1.html',1,'']]],
+  ['uspicr2',['uSPICR2',['../unionu_s_p_i_c_r2.html',1,'']]],
+  ['uspidr',['uSPIDR',['../unionu_s_p_i_d_r.html',1,'']]],
+  ['uspisr',['uSPISR',['../unionu_s_p_i_s_r.html',1,'']]]
 ];
