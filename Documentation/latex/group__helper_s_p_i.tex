@@ -1,0 +1,35 @@
+\hypertarget{group__helper_s_p_i}{}\section{Helper functions}
+\label{group__helper_s_p_i}\index{Helper functions@{Helper functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structspi__divider}{spi\+\_\+divider} \hyperlink{group__helper_s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}{spi\+\_\+baud\+\_\+cal} (unsigned long Bus\+Clock, unsigned long baudrate)
+\begin{DoxyCompactList}\small\item\em Calculates the best dividers values for the desired frequency. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group__helper_s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}{}\index{Helper functions@{Helper functions}!spi\+\_\+baud\+\_\+cal@{spi\+\_\+baud\+\_\+cal}}
+\index{spi\+\_\+baud\+\_\+cal@{spi\+\_\+baud\+\_\+cal}!Helper functions@{Helper functions}}
+\subsubsection[{spi\+\_\+baud\+\_\+cal(unsigned long Bus\+Clock, unsigned long baudrate)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\+\_\+divider} spi\+\_\+baud\+\_\+cal (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock, }
+\item[{unsigned long}]{baudrate}
+\end{DoxyParamCaption}
+)}\label{group__helper_s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}
+
+
+Calculates the best dividers values for the desired frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Bus\+Clock} & Bus frequency of the device \\
+\hline
+{\em baudrate} & Desired baudrate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Prescaler values that best match the desired baudrate, and the calculated error with these values 
+\end{DoxyReturn}

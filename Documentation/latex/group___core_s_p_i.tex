@@ -1,0 +1,158 @@
+\hypertarget{group___core_s_p_i}{}\section{Core S\+P\+I A\+P\+I functions}
+\label{group___core_s_p_i}\index{Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___core_s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}{spi\+\_\+init\+\_\+mst} (unsigned long Bus\+Clock, unsigned long baudrate, unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+P\+I interface to the desired baudrate as a Master. \end{DoxyCompactList}\item 
+void \hyperlink{group___core_s_p_i_ga65cea3c951df80d515ad8de782eacdb8}{spi\+\_\+init\+\_\+slv} (unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+P\+I interface as slave. \end{DoxyCompactList}\item 
+void \hyperlink{group___core_s_p_i_ga0ae24835498fe160774990423328cc41}{send\+\_\+\+S\+P\+I} (word data)
+\begin{DoxyCompactList}\small\item\em Sends data through S\+P\+I. \end{DoxyCompactList}\item 
+word \hyperlink{group___core_s_p_i_ga47ab469f1d05e31eab7814cab5123127}{get\+\_\+\+S\+P\+I} (void)
+\begin{DoxyCompactList}\small\item\em Receives data through S\+P\+I. \end{DoxyCompactList}\item 
+word \hyperlink{group___core_s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}{tranfer\+\_\+\+S\+P\+I} (word data)
+\begin{DoxyCompactList}\small\item\em Sends and receives data through the S\+P\+I interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___core_s_p_i_ga47ab469f1d05e31eab7814cab5123127}{}\index{Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}!get\+\_\+\+S\+P\+I@{get\+\_\+\+S\+P\+I}}
+\index{get\+\_\+\+S\+P\+I@{get\+\_\+\+S\+P\+I}!Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}}
+\subsubsection[{get\+\_\+\+S\+P\+I(void)}]{\setlength{\rightskip}{0pt plus 5cm}word get\+\_\+\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___core_s_p_i_ga47ab469f1d05e31eab7814cab5123127}
+
+
+Receives data through S\+P\+I. 
+
+\begin{DoxyReturn}{Returns}
+Data received through S\+P\+I 
+\end{DoxyReturn}
+\hypertarget{group___core_s_p_i_ga0ae24835498fe160774990423328cc41}{}\index{Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}!send\+\_\+\+S\+P\+I@{send\+\_\+\+S\+P\+I}}
+\index{send\+\_\+\+S\+P\+I@{send\+\_\+\+S\+P\+I}!Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}}
+\subsubsection[{send\+\_\+\+S\+P\+I(word data)}]{\setlength{\rightskip}{0pt plus 5cm}void send\+\_\+\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{word}]{data}
+\end{DoxyParamCaption}
+)}\label{group___core_s_p_i_ga0ae24835498fe160774990423328cc41}
+
+
+Sends data through S\+P\+I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to be sent \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}{}\index{Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}!spi\+\_\+init\+\_\+mst@{spi\+\_\+init\+\_\+mst}}
+\index{spi\+\_\+init\+\_\+mst@{spi\+\_\+init\+\_\+mst}!Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}}
+\subsubsection[{spi\+\_\+init\+\_\+mst(unsigned long Bus\+Clock, unsigned long baudrate, unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)}]{\setlength{\rightskip}{0pt plus 5cm}void spi\+\_\+init\+\_\+mst (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock, }
+\item[{unsigned long}]{baudrate, }
+\item[{unsigned char}]{transfer\+\_\+width, }
+\item[{unsigned char}]{S\+P\+I\+\_\+\+M\+O\+D\+E}
+\end{DoxyParamCaption}
+)}\label{group___core_s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}
+
+
+Initializes the S\+P\+I interface to the desired baudrate as a Master. 
+
+This functions initializes the S\+P\+I interface to act as a master device, it sets the frequency of the S\+P\+I clock to the best possible match. It allows to select between 8-\/bit transfers or 16-\/bit transfers by passing the macro B\+I\+T\+\_\+8 or B\+I\+T\+\_\+16 respectively. The S\+P\+I\+\_\+\+M\+O\+D\+E parameter selects the Clock Polarity and Clock Phase for the communication protocol. In order for an S\+P\+I transaction to occur successfully both master and slave must have the same Clock Polarity and Clock phase configuration. The Clock Polarity and Clock Phase configuration can be achieved as follows \begin{TabularC}{3}
+\hline
+S\+P\+I\+\_\+\+M\+O\+D\+E &Clock Phase &Clock Polarity  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E0 &0 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E1 &0 &1  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E2 &1 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E3 &1 &1  \\\cline{1-3}
+\end{TabularC}
+By setting the Clock Polarity to zero active-\/high clocks are selected. In idle state S\+C\+K is low.
+
+By setting the Clock Polarity to one active-\/low clocks selected. In idle state S\+C\+K is high.
+
+By setting the Clock Phase to zero sampling of data occurs at odd edges (1,3,5,...) of the S\+C\+K clock.
+
+By setting the Clock Phase to one sampling of data occurs at even edges (2,4,6,...) of the S\+C\+K clock.
+
+For more information refer to the Reference Manual of your device. The following example sets the S\+P\+I clock to a frequency of 12.\+5\+M\+Hz with a Bus frequency of 25\+M\+Hz, selecting an 8-\/\+Bit transfer, Clock Polarity with active-\/high clocks and clock phase with sampling of data at odd edges\+: 
+\begin{DoxyCode}
+1 spi\_init\_mst(25000000, 12500000, BIT\_8, SPI\_MODE0);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em Bus\+Clock} & Bus frequency of the device \\
+\hline
+{\em baudrate} & Desired baudrate \\
+\hline
+{\em transfer\+\_\+width} & Select between 8bit transfer and 16bit transfer \\
+\hline
+{\em S\+P\+I\+\_\+\+M\+O\+D\+E} & Selects the Clock polarity and Clock phase \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_s_p_i_ga65cea3c951df80d515ad8de782eacdb8}{}\index{Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}!spi\+\_\+init\+\_\+slv@{spi\+\_\+init\+\_\+slv}}
+\index{spi\+\_\+init\+\_\+slv@{spi\+\_\+init\+\_\+slv}!Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}}
+\subsubsection[{spi\+\_\+init\+\_\+slv(unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)}]{\setlength{\rightskip}{0pt plus 5cm}void spi\+\_\+init\+\_\+slv (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{transfer\+\_\+width, }
+\item[{unsigned char}]{S\+P\+I\+\_\+\+M\+O\+D\+E}
+\end{DoxyParamCaption}
+)}\label{group___core_s_p_i_ga65cea3c951df80d515ad8de782eacdb8}
+
+
+Initializes the S\+P\+I interface as slave. 
+
+This functions initializes the S\+P\+I interface to act as a slave device. It allows to select between 8-\/bit transfers or 16-\/bit transfers by passing the macro B\+I\+T\+\_\+8 or B\+I\+T\+\_\+16 respectively. The S\+P\+I\+\_\+\+M\+O\+D\+E parameter selects the Clock Polarity and Clock Phase for the communication protocol. In order for an S\+P\+I transaction to occur successfully both master and slave must have the same Clock Polarity and Clock phase configuration. The Clock Polarity and Clock Phase configuration can be achieved as follows \begin{TabularC}{3}
+\hline
+S\+P\+I\+\_\+\+M\+O\+D\+E &Clock Phase &Clock Polarity  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E0 &0 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E1 &0 &1  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E2 &1 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E3 &1 &1  \\\cline{1-3}
+\end{TabularC}
+By setting the Clock Polarity to zero active-\/high clocks are selected. In idle state S\+C\+K is low.
+
+By setting the Clock Polarity to one active-\/low clocks selected. In idle state S\+C\+K is high.
+
+By setting the Clock Phase to zero sampling of data occurs at odd edges (1,3,5,...) of the S\+C\+K clock.
+
+By setting the Clock Phase to one sampling of data occurs at even edges (2,4,6,...) of the S\+C\+K clock.
+
+For more information refer to the Reference Manual of your device. The following example selects an 8-\/\+Bit transfer, Clock Polarity with active-\/high clocks and clock phase with sampling of data at odd edges\+: 
+\begin{DoxyCode}
+1 spi\_init\_slv(BIT\_8, SPI\_MODE0);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em transfer\+\_\+width} & Select between 8bit transfer and 16bit transfer \\
+\hline
+{\em S\+P\+I\+\_\+\+M\+O\+D\+E} & Selects the Clock polarity and Clock phase \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___core_s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}{}\index{Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}!tranfer\+\_\+\+S\+P\+I@{tranfer\+\_\+\+S\+P\+I}}
+\index{tranfer\+\_\+\+S\+P\+I@{tranfer\+\_\+\+S\+P\+I}!Core S\+P\+I A\+P\+I functions@{Core S\+P\+I A\+P\+I functions}}
+\subsubsection[{tranfer\+\_\+\+S\+P\+I(word data)}]{\setlength{\rightskip}{0pt plus 5cm}word tranfer\+\_\+\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{word}]{data}
+\end{DoxyParamCaption}
+)}\label{group___core_s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}
+
+
+Sends and receives data through the S\+P\+I interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to be send through the S\+P\+I interface\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data received through the S\+P\+I interface 
+\end{DoxyReturn}
