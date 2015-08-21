@@ -1,0 +1,88 @@
+\hypertarget{spi_8h}{}\section{C\+:/\+Users/b52932/\+Documents/\+Magni\+V\+\_\+\+A\+P\+I/\+Magni\+V\+\_\+\+A\+P\+I/\+Sources/\+Magni\+V\+\_\+\+A\+P\+I/\+S\+P\+I/spi.h File Reference}
+\label{spi_8h}\index{C\+:/\+Users/b52932/\+Documents/\+Magni\+V\+\_\+\+A\+P\+I/\+Magni\+V\+\_\+\+A\+P\+I/\+Sources/\+Magni\+V\+\_\+\+A\+P\+I/\+S\+P\+I/spi.\+h@{C\+:/\+Users/b52932/\+Documents/\+Magni\+V\+\_\+\+A\+P\+I/\+Magni\+V\+\_\+\+A\+P\+I/\+Sources/\+Magni\+V\+\_\+\+A\+P\+I/\+S\+P\+I/spi.\+h}}
+
+
+Contains Serial peripheral interface A\+P\+I routines for Magni\+V devices.  
+
+
+{\ttfamily \#include \char`\"{}derivative.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}common.\+h\char`\"{}}\\*
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structspi__divider}{spi\+\_\+divider}
+\begin{DoxyCompactList}\small\item\em A structure that holds the prescaler values for the baudrate configuration. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_c_r1}{u\+S\+P\+I\+C\+R1}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Control Register 1. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_c_r2}{u\+S\+P\+I\+C\+R2}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Control Register 2. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_b_r}{u\+S\+P\+I\+B\+R}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Baud Rate Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_s_r}{u\+S\+P\+I\+S\+R}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Status Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_d_r}{u\+S\+P\+I\+D\+R}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Data Register. \end{DoxyCompactList}\item 
+struct \hyperlink{structt_s_p_i}{t\+S\+P\+I}
+\begin{DoxyCompactList}\small\item\em spi datastructure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___s_p_i_gad368b88fcb5547c245121a4533e9f858}{}\#define {\bfseries B\+I\+T\+\_\+8}~0\label{group___s_p_i_gad368b88fcb5547c245121a4533e9f858}
+
+\item 
+\hypertarget{group___s_p_i_gaa5b535cdb2b0b6509a32f8a02ef64719}{}\#define {\bfseries B\+I\+T\+\_\+16}~1\label{group___s_p_i_gaa5b535cdb2b0b6509a32f8a02ef64719}
+
+\item 
+\hypertarget{group___s_p_i_gac9d0bde2b42b2403d00b7a611514b006}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E0}~0\label{group___s_p_i_gac9d0bde2b42b2403d00b7a611514b006}
+
+\item 
+\hypertarget{group___s_p_i_ga9481b7327b91aa52ff5f70eb2d0acc95}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E1}~1\label{group___s_p_i_ga9481b7327b91aa52ff5f70eb2d0acc95}
+
+\item 
+\hypertarget{group___s_p_i_ga991dec04d2fb38979cfb0d9fc7f8b026}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E2}~2\label{group___s_p_i_ga991dec04d2fb38979cfb0d9fc7f8b026}
+
+\item 
+\hypertarget{group___s_p_i_ga5f928a2445070981765ee0416c12369d}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E3}~3\label{group___s_p_i_ga5f928a2445070981765ee0416c12369d}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___s_p_i_ga9439139bf71e66bf6c7d3ee62fbd8bb4}{}typedef union \hyperlink{unionu_s_p_i_c_r1}{u\+S\+P\+I\+C\+R1} {\bfseries t\+S\+P\+I\+C\+R1}\label{group___s_p_i_ga9439139bf71e66bf6c7d3ee62fbd8bb4}
+
+\item 
+\hypertarget{group___s_p_i_ga7699893f3d74243f57e751dfbfacd1ad}{}typedef union \hyperlink{unionu_s_p_i_c_r2}{u\+S\+P\+I\+C\+R2} {\bfseries t\+S\+P\+I\+C\+R2}\label{group___s_p_i_ga7699893f3d74243f57e751dfbfacd1ad}
+
+\item 
+\hypertarget{group___s_p_i_ga52c014267ca69adfcf32dfe190b387fa}{}typedef union \hyperlink{unionu_s_p_i_b_r}{u\+S\+P\+I\+B\+R} {\bfseries t\+S\+P\+I\+B\+R}\label{group___s_p_i_ga52c014267ca69adfcf32dfe190b387fa}
+
+\item 
+\hypertarget{group___s_p_i_ga1f010608bebe23084eee1e4e2b52fcba}{}typedef union \hyperlink{unionu_s_p_i_s_r}{u\+S\+P\+I\+S\+R} {\bfseries t\+S\+P\+I\+S\+R}\label{group___s_p_i_ga1f010608bebe23084eee1e4e2b52fcba}
+
+\item 
+\hypertarget{group___s_p_i_ga611171d26aac87ea183224ebbc723a65}{}typedef union \hyperlink{unionu_s_p_i_d_r}{u\+S\+P\+I\+D\+R} {\bfseries t\+S\+P\+I\+D\+R}\label{group___s_p_i_ga611171d26aac87ea183224ebbc723a65}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}{spi\+\_\+init\+\_\+mst} (unsigned long Bus\+Clock, unsigned long baudrate, unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+P\+I interface to the desired baudrate as a Master. \end{DoxyCompactList}\item 
+void \hyperlink{group___s_p_i_ga65cea3c951df80d515ad8de782eacdb8}{spi\+\_\+init\+\_\+slv} (unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+P\+I interface as slave. \end{DoxyCompactList}\item 
+\hyperlink{structspi__divider}{spi\+\_\+divider} \hyperlink{group___s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}{spi\+\_\+baud\+\_\+cal} (unsigned long Bus\+Clock, unsigned long baudrate)
+\begin{DoxyCompactList}\small\item\em Calculates the best dividers values for the desired frequency. \end{DoxyCompactList}\item 
+void \hyperlink{group___s_p_i_ga0ae24835498fe160774990423328cc41}{send\+\_\+\+S\+P\+I} (word data)
+\begin{DoxyCompactList}\small\item\em Sends data through S\+P\+I. \end{DoxyCompactList}\item 
+word \hyperlink{group___s_p_i_ga47ab469f1d05e31eab7814cab5123127}{get\+\_\+\+S\+P\+I} (void)
+\begin{DoxyCompactList}\small\item\em Receives data through S\+P\+I. \end{DoxyCompactList}\item 
+word \hyperlink{group___s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}{tranfer\+\_\+\+S\+P\+I} (word data)
+\begin{DoxyCompactList}\small\item\em Sends and receives data through the S\+P\+I interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains Serial peripheral interface A\+P\+I routines for Magni\+V devices. 
+
+\begin{DoxyAuthor}{Author}
+Manuel Rodriguez 
+\end{DoxyAuthor}

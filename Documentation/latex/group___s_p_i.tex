@@ -1,0 +1,245 @@
+\hypertarget{group___s_p_i}{}\section{Serial Peripheral interface}
+\label{group___s_p_i}\index{Serial Peripheral interface@{Serial Peripheral interface}}
+\subsection*{Files}
+\begin{DoxyCompactItemize}
+\item 
+file \hyperlink{spi_8c}{spi.\+c}
+\begin{DoxyCompactList}\small\item\em Contains serial peripheral interface A\+P\+I routines for Magni\+V devices. \end{DoxyCompactList}\item 
+file \hyperlink{spi_8h}{spi.\+h}
+\begin{DoxyCompactList}\small\item\em Contains Serial peripheral interface A\+P\+I routines for Magni\+V devices. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Data Structures}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structspi__divider}{spi\+\_\+divider}
+\begin{DoxyCompactList}\small\item\em A structure that holds the prescaler values for the baudrate configuration. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_c_r1}{u\+S\+P\+I\+C\+R1}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Control Register 1. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_c_r2}{u\+S\+P\+I\+C\+R2}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Control Register 2. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_b_r}{u\+S\+P\+I\+B\+R}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Baud Rate Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_s_r}{u\+S\+P\+I\+S\+R}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Status Register. \end{DoxyCompactList}\item 
+union \hyperlink{unionu_s_p_i_d_r}{u\+S\+P\+I\+D\+R}
+\begin{DoxyCompactList}\small\item\em S\+P\+I Data Register. \end{DoxyCompactList}\item 
+struct \hyperlink{structt_s_p_i}{t\+S\+P\+I}
+\begin{DoxyCompactList}\small\item\em spi datastructure \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___s_p_i_gad368b88fcb5547c245121a4533e9f858}{}\#define {\bfseries B\+I\+T\+\_\+8}~0\label{group___s_p_i_gad368b88fcb5547c245121a4533e9f858}
+
+\item 
+\hypertarget{group___s_p_i_gaa5b535cdb2b0b6509a32f8a02ef64719}{}\#define {\bfseries B\+I\+T\+\_\+16}~1\label{group___s_p_i_gaa5b535cdb2b0b6509a32f8a02ef64719}
+
+\item 
+\hypertarget{group___s_p_i_gac9d0bde2b42b2403d00b7a611514b006}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E0}~0\label{group___s_p_i_gac9d0bde2b42b2403d00b7a611514b006}
+
+\item 
+\hypertarget{group___s_p_i_ga9481b7327b91aa52ff5f70eb2d0acc95}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E1}~1\label{group___s_p_i_ga9481b7327b91aa52ff5f70eb2d0acc95}
+
+\item 
+\hypertarget{group___s_p_i_ga991dec04d2fb38979cfb0d9fc7f8b026}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E2}~2\label{group___s_p_i_ga991dec04d2fb38979cfb0d9fc7f8b026}
+
+\item 
+\hypertarget{group___s_p_i_ga5f928a2445070981765ee0416c12369d}{}\#define {\bfseries S\+P\+I\+\_\+\+M\+O\+D\+E3}~3\label{group___s_p_i_ga5f928a2445070981765ee0416c12369d}
+
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+\hypertarget{group___s_p_i_ga9439139bf71e66bf6c7d3ee62fbd8bb4}{}typedef union \hyperlink{unionu_s_p_i_c_r1}{u\+S\+P\+I\+C\+R1} {\bfseries t\+S\+P\+I\+C\+R1}\label{group___s_p_i_ga9439139bf71e66bf6c7d3ee62fbd8bb4}
+
+\item 
+\hypertarget{group___s_p_i_ga7699893f3d74243f57e751dfbfacd1ad}{}typedef union \hyperlink{unionu_s_p_i_c_r2}{u\+S\+P\+I\+C\+R2} {\bfseries t\+S\+P\+I\+C\+R2}\label{group___s_p_i_ga7699893f3d74243f57e751dfbfacd1ad}
+
+\item 
+\hypertarget{group___s_p_i_ga52c014267ca69adfcf32dfe190b387fa}{}typedef union \hyperlink{unionu_s_p_i_b_r}{u\+S\+P\+I\+B\+R} {\bfseries t\+S\+P\+I\+B\+R}\label{group___s_p_i_ga52c014267ca69adfcf32dfe190b387fa}
+
+\item 
+\hypertarget{group___s_p_i_ga1f010608bebe23084eee1e4e2b52fcba}{}typedef union \hyperlink{unionu_s_p_i_s_r}{u\+S\+P\+I\+S\+R} {\bfseries t\+S\+P\+I\+S\+R}\label{group___s_p_i_ga1f010608bebe23084eee1e4e2b52fcba}
+
+\item 
+\hypertarget{group___s_p_i_ga611171d26aac87ea183224ebbc723a65}{}typedef union \hyperlink{unionu_s_p_i_d_r}{u\+S\+P\+I\+D\+R} {\bfseries t\+S\+P\+I\+D\+R}\label{group___s_p_i_ga611171d26aac87ea183224ebbc723a65}
+
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{group___s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}{spi\+\_\+init\+\_\+mst} (unsigned long Bus\+Clock, unsigned long baudrate, unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+P\+I interface to the desired baudrate as a Master. \end{DoxyCompactList}\item 
+void \hyperlink{group___s_p_i_ga65cea3c951df80d515ad8de782eacdb8}{spi\+\_\+init\+\_\+slv} (unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)
+\begin{DoxyCompactList}\small\item\em Initializes the S\+P\+I interface as slave. \end{DoxyCompactList}\item 
+\hyperlink{structspi__divider}{spi\+\_\+divider} \hyperlink{group___s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}{spi\+\_\+baud\+\_\+cal} (unsigned long Bus\+Clock, unsigned long baudrate)
+\begin{DoxyCompactList}\small\item\em Calculates the best dividers values for the desired frequency. \end{DoxyCompactList}\item 
+void \hyperlink{group___s_p_i_ga0ae24835498fe160774990423328cc41}{send\+\_\+\+S\+P\+I} (word data)
+\begin{DoxyCompactList}\small\item\em Sends data through S\+P\+I. \end{DoxyCompactList}\item 
+word \hyperlink{group___s_p_i_ga47ab469f1d05e31eab7814cab5123127}{get\+\_\+\+S\+P\+I} (void)
+\begin{DoxyCompactList}\small\item\em Receives data through S\+P\+I. \end{DoxyCompactList}\item 
+word \hyperlink{group___s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}{tranfer\+\_\+\+S\+P\+I} (word data)
+\begin{DoxyCompactList}\small\item\em Sends and receives data through the S\+P\+I interface. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+
+
+\subsection{Function Documentation}
+\hypertarget{group___s_p_i_ga47ab469f1d05e31eab7814cab5123127}{}\index{Serial Peripheral interface@{Serial Peripheral interface}!get\+\_\+\+S\+P\+I@{get\+\_\+\+S\+P\+I}}
+\index{get\+\_\+\+S\+P\+I@{get\+\_\+\+S\+P\+I}!Serial Peripheral interface@{Serial Peripheral interface}}
+\subsubsection[{get\+\_\+\+S\+P\+I(void)}]{\setlength{\rightskip}{0pt plus 5cm}word get\+\_\+\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{void}]{}
+\end{DoxyParamCaption}
+)}\label{group___s_p_i_ga47ab469f1d05e31eab7814cab5123127}
+
+
+Receives data through S\+P\+I. 
+
+\begin{DoxyReturn}{Returns}
+Data received through S\+P\+I 
+\end{DoxyReturn}
+\hypertarget{group___s_p_i_ga0ae24835498fe160774990423328cc41}{}\index{Serial Peripheral interface@{Serial Peripheral interface}!send\+\_\+\+S\+P\+I@{send\+\_\+\+S\+P\+I}}
+\index{send\+\_\+\+S\+P\+I@{send\+\_\+\+S\+P\+I}!Serial Peripheral interface@{Serial Peripheral interface}}
+\subsubsection[{send\+\_\+\+S\+P\+I(word data)}]{\setlength{\rightskip}{0pt plus 5cm}void send\+\_\+\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{word}]{data}
+\end{DoxyParamCaption}
+)}\label{group___s_p_i_ga0ae24835498fe160774990423328cc41}
+
+
+Sends data through S\+P\+I. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to be sent \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}{}\index{Serial Peripheral interface@{Serial Peripheral interface}!spi\+\_\+baud\+\_\+cal@{spi\+\_\+baud\+\_\+cal}}
+\index{spi\+\_\+baud\+\_\+cal@{spi\+\_\+baud\+\_\+cal}!Serial Peripheral interface@{Serial Peripheral interface}}
+\subsubsection[{spi\+\_\+baud\+\_\+cal(unsigned long Bus\+Clock, unsigned long baudrate)}]{\setlength{\rightskip}{0pt plus 5cm}{\bf spi\+\_\+divider} spi\+\_\+baud\+\_\+cal (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock, }
+\item[{unsigned long}]{baudrate}
+\end{DoxyParamCaption}
+)}\label{group___s_p_i_ga1891ee7d4d812f998f290c9a1a65068b}
+
+
+Calculates the best dividers values for the desired frequency. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Bus\+Clock} & Bus frequency of the device \\
+\hline
+{\em baudrate} & Desired baudrate\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Prescaler values that best match the desired baudrate, and the calculated error with these values 
+\end{DoxyReturn}
+\hypertarget{group___s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}{}\index{Serial Peripheral interface@{Serial Peripheral interface}!spi\+\_\+init\+\_\+mst@{spi\+\_\+init\+\_\+mst}}
+\index{spi\+\_\+init\+\_\+mst@{spi\+\_\+init\+\_\+mst}!Serial Peripheral interface@{Serial Peripheral interface}}
+\subsubsection[{spi\+\_\+init\+\_\+mst(unsigned long Bus\+Clock, unsigned long baudrate, unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)}]{\setlength{\rightskip}{0pt plus 5cm}void spi\+\_\+init\+\_\+mst (
+\begin{DoxyParamCaption}
+\item[{unsigned long}]{Bus\+Clock, }
+\item[{unsigned long}]{baudrate, }
+\item[{unsigned char}]{transfer\+\_\+width, }
+\item[{unsigned char}]{S\+P\+I\+\_\+\+M\+O\+D\+E}
+\end{DoxyParamCaption}
+)}\label{group___s_p_i_gab49ca6ed7d4337f79a4a46253a0bcc62}
+
+
+Initializes the S\+P\+I interface to the desired baudrate as a Master. 
+
+This functions initializes the S\+P\+I interface to act as a master device, it sets the frequency of the S\+P\+I clock to the best possible match. It allows to select between 8-\/bit transfers or 16-\/bit transfers by passing the macro B\+I\+T\+\_\+8 or B\+I\+T\+\_\+16 respectively. The S\+P\+I\+\_\+\+M\+O\+D\+E parameter selects the Clock Polarity and Clock Phase for the communication protocol. In order for an S\+P\+I transaction to occur successfully both master and slave must have the same Clock Polarity and Clock phase configuration. The Clock Polarity and Clock Phase configuration can be achieved as follows \begin{TabularC}{3}
+\hline
+S\+P\+I\+\_\+\+M\+O\+D\+E &Clock Phase &Clock Polarity  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E0 &0 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E1 &0 &1  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E2 &1 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E3 &1 &1  \\\cline{1-3}
+\end{TabularC}
+By setting the Clock Polarity to zero active-\/high clocks are selected. In idle state S\+C\+K is low.
+
+By setting the Clock Polarity to one active-\/low clocks selected. In idle state S\+C\+K is high.
+
+By setting the Clock Phase to zero sampling of data occurs at odd edges (1,3,5,...) of the S\+C\+K clock.
+
+By setting the Clock Phase to one sampling of data occurs at even edges (2,4,6,...) of the S\+C\+K clock.
+
+For more information refer to the Reference Manual of your device. The following example sets the S\+P\+I clock to a frequency of 12.\+5\+M\+Hz with a Bus frequency of 25\+M\+Hz, selecting an 8-\/\+Bit transfer, Clock Polarity with active-\/high clocks and clock phase with sampling of data at odd edges\+: 
+\begin{DoxyCode}
+1 spi\_init\_mst(25000000, 12500000, BIT\_8, SPI\_MODE0);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em Bus\+Clock} & Bus frequency of the device \\
+\hline
+{\em baudrate} & Desired baudrate \\
+\hline
+{\em transfer\+\_\+width} & Select between 8bit transfer and 16bit transfer \\
+\hline
+{\em S\+P\+I\+\_\+\+M\+O\+D\+E} & Selects the Clock polarity and Clock phase \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___s_p_i_ga65cea3c951df80d515ad8de782eacdb8}{}\index{Serial Peripheral interface@{Serial Peripheral interface}!spi\+\_\+init\+\_\+slv@{spi\+\_\+init\+\_\+slv}}
+\index{spi\+\_\+init\+\_\+slv@{spi\+\_\+init\+\_\+slv}!Serial Peripheral interface@{Serial Peripheral interface}}
+\subsubsection[{spi\+\_\+init\+\_\+slv(unsigned char transfer\+\_\+width, unsigned char S\+P\+I\+\_\+\+M\+O\+D\+E)}]{\setlength{\rightskip}{0pt plus 5cm}void spi\+\_\+init\+\_\+slv (
+\begin{DoxyParamCaption}
+\item[{unsigned char}]{transfer\+\_\+width, }
+\item[{unsigned char}]{S\+P\+I\+\_\+\+M\+O\+D\+E}
+\end{DoxyParamCaption}
+)}\label{group___s_p_i_ga65cea3c951df80d515ad8de782eacdb8}
+
+
+Initializes the S\+P\+I interface as slave. 
+
+This functions initializes the S\+P\+I interface to act as a slave device. It allows to select between 8-\/bit transfers or 16-\/bit transfers by passing the macro B\+I\+T\+\_\+8 or B\+I\+T\+\_\+16 respectively. The S\+P\+I\+\_\+\+M\+O\+D\+E parameter selects the Clock Polarity and Clock Phase for the communication protocol. In order for an S\+P\+I transaction to occur successfully both master and slave must have the same Clock Polarity and Clock phase configuration. The Clock Polarity and Clock Phase configuration can be achieved as follows \begin{TabularC}{3}
+\hline
+S\+P\+I\+\_\+\+M\+O\+D\+E &Clock Phase &Clock Polarity  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E0 &0 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E1 &0 &1  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E2 &1 &0  \\\cline{1-3}
+S\+P\+I\+\_\+\+M\+O\+D\+E3 &1 &1  \\\cline{1-3}
+\end{TabularC}
+By setting the Clock Polarity to zero active-\/high clocks are selected. In idle state S\+C\+K is low.
+
+By setting the Clock Polarity to one active-\/low clocks selected. In idle state S\+C\+K is high.
+
+By setting the Clock Phase to zero sampling of data occurs at odd edges (1,3,5,...) of the S\+C\+K clock.
+
+By setting the Clock Phase to one sampling of data occurs at even edges (2,4,6,...) of the S\+C\+K clock.
+
+For more information refer to the Reference Manual of your device. The following example selects an 8-\/\+Bit transfer, Clock Polarity with active-\/high clocks and clock phase with sampling of data at odd edges\+: 
+\begin{DoxyCode}
+1 spi\_init\_slv(BIT\_8, SPI\_MODE0);
+\end{DoxyCode}
+
+
+
+\begin{DoxyParams}{Parameters}
+{\em transfer\+\_\+width} & Select between 8bit transfer and 16bit transfer \\
+\hline
+{\em S\+P\+I\+\_\+\+M\+O\+D\+E} & Selects the Clock polarity and Clock phase \\
+\hline
+\end{DoxyParams}
+\hypertarget{group___s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}{}\index{Serial Peripheral interface@{Serial Peripheral interface}!tranfer\+\_\+\+S\+P\+I@{tranfer\+\_\+\+S\+P\+I}}
+\index{tranfer\+\_\+\+S\+P\+I@{tranfer\+\_\+\+S\+P\+I}!Serial Peripheral interface@{Serial Peripheral interface}}
+\subsubsection[{tranfer\+\_\+\+S\+P\+I(word data)}]{\setlength{\rightskip}{0pt plus 5cm}word tranfer\+\_\+\+S\+P\+I (
+\begin{DoxyParamCaption}
+\item[{word}]{data}
+\end{DoxyParamCaption}
+)}\label{group___s_p_i_ga0161f7f2a3f5e77e2e71051bdfdcb856}
+
+
+Sends and receives data through the S\+P\+I interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em data} & Data to be send through the S\+P\+I interface\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Data received through the S\+P\+I interface 
+\end{DoxyReturn}
