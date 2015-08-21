@@ -17,7 +17,7 @@
  * */
 
 #include "cpmu.h"
-/** \addtogroup Core Core API functions  
+/** \addtogroup CoreCPMU Core CPMU API functions  
  *  @{
  */
 /** Initializes the Bus clock at the desired speed using the internal oscillator.
@@ -47,7 +47,7 @@ void clock_init_ext(unsigned long BusClock, unsigned long ExtFreq){
 }
 /** @}*/
 
-/** \addtogroup helper Helper functions  
+/** \addtogroup helperCPMU Helper functions  
  *  @{
  */
 /** Calculate the prescaler values for the corresponding bus frequency.

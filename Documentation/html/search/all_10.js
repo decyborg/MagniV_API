@@ -8,7 +8,7 @@ var searchData=
   ['te',['te',['../unionu_s_c_i_c_r2.html#aca875818430e47d7d35a79985f56c37e',1,'uSCICR2']]],
   ['tie',['tie',['../unionu_s_c_i_c_r2.html#a0c1c0a022ca4060b45ec6ea28718e24a',1,'uSCICR2']]],
   ['tnp',['tnp',['../unionu_s_c_i_c_r1.html#a85630b949936b19c709bff2e9f8b198f',1,'uSCICR1']]],
-  ['tranfer_5fspi',['tranfer_SPI',['../group___s_p_i.html#ga0161f7f2a3f5e77e2e71051bdfdcb856',1,'spi.c']]],
+  ['tranfer_5fspi',['tranfer_SPI',['../group___core_s_p_i.html#ga0161f7f2a3f5e77e2e71051bdfdcb856',1,'tranfer_SPI(word data):&#160;spi.c'],['../group___s_p_i.html#ga0161f7f2a3f5e77e2e71051bdfdcb856',1,'tranfer_SPI(word data):&#160;spi.c']]],
   ['tsci',['tSCI',['../structt_s_c_i.html',1,'']]],
   ['tspi',['tSPI',['../structt_s_p_i.html',1,'']]],
   ['txdir',['txdir',['../unionu_s_c_i_s_r2.html#afbe7b35de0dd7d74bc26c4f53fcc7b98',1,'uSCISR2']]],

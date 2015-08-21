@@ -12,7 +12,9 @@
 
 #include "spi.h"
 
-
+/** \addtogroup CoreSPI Core SPI API functions  
+ *  @{
+ */
 /**	Initializes the SPI interface to the desired baudrate as a Master.
  * 
  * 	This functions initializes the SPI interface to act as a master device, it sets
@@ -76,8 +78,8 @@ void spi_init_mst(unsigned long BusClock, unsigned long baudrate, unsigned char 
 	spi_prs = spi_baud_cal(BusClock, baudrate);				/* Calculate prescaler values */
 	pSPI->spibr.bit.SPR = spi_prs.SPR;						/* Set baud rate */
 	pSPI->spibr.bit.SPPR = spi_prs.SPPR;
-	pSPI->spicr1.bit.cpol = SPI_MODE & 0b01;				/* Select Clock Polarity */
-	pSPI->spicr1.bit.cpha = SPI_MODE & 0b10;				/* Select Clock Phase */
+	pSPI->spicr1.bit.cpol = SPI_MODE && 0b01;				/* Select Clock Polarity */
+	pSPI->spicr1.bit.cpha = SPI_MODE && 0b10;				/* Select Clock Phase */
 	pSPI->spicr1.bit.mstr = 1;								/* Select Master */
 	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
 	pSPI->spicr1.bit.ssoe = 1;
@@ -148,12 +150,47 @@ void spi_init_slv(unsigned char transfer_width, unsigned char SPI_MODE){
 	pSPI->spicr1.bit.mstr = 0;								/* Select Slave */
 	pSPI->spicr2.bit.modefen = 1;							/* Use SS */
 	pSPI->spicr1.bit.ssoe = 1;
-	pSPI->spicr1.bit.cpol = SPI_MODE & 0b01;				/* Select Clock Polarity */
-	pSPI->spicr1.bit.cpha = SPI_MODE & 0b10;				/* Select Clock Phase */
+	pSPI->spicr1.bit.cpol = SPI_MODE && 0b01;				/* Select Clock Polarity */
+	pSPI->spicr1.bit.cpha = SPI_MODE && 0b10;				/* Select Clock Phase */
 	pSPI->spicr2.bit.xfrw = transfer_width;					/* Select between 8bit and 16bit transfer */
 	pSPI->spicr1.bit.spe = 1;								/* Enable SPI System */
 }
 
+/** Sends data through SPI
+ * 
+ * @param data Data to be sent
+ * */
+void send_SPI(word data){
+	tSPI* pSPI = (tSPI*) SPI_ADDR;
+	while(!pSPI->spisr.bit.sptef){};
+	pSPI->spidr.word = data;
+}
+
+/** Receives data through SPI
+ * 
+ * @return Data received through SPI
+ * */
+word get_SPI(void){
+	tSPI* pSPI = (tSPI*) SPI_ADDR;
+	
+	while(!pSPI->spisr.bit.spif){};									/* Wait for data */
+	return pSPI->spidr.word;										/* Return received data */
+}
+
+/** Sends and receives data through the SPI interface
+ * 
+ * @param data Data to be send through the SPI interface
+ * 
+ * @return Data received through the SPI interface
+ * */
+word tranfer_SPI(word data){
+	send_SPI(data);													/* Send data */
+	return get_SPI();												/* Receive data */
+}
+/** @}*/
+/** \addtogroup helperSPI Helper functions  
+ *  @{
+ */
 /** Calculates the best dividers values for the desired frequency
  * 
  * 	@param BusClock Bus frequency of the device
@@ -198,37 +235,5 @@ spi_divider spi_baud_cal(unsigned long BusClock, unsigned long baudrate){
 	
 	return spi_pr;													/* Return found values that better match the baudrate */
 }
-
-/** Sends data through SPI
- * 
- * @param data Data to be sent
- * */
-void send_SPI(word data){
-	tSPI* pSPI = (tSPI*) SPI_ADDR;
-	while(!pSPI->spisr.bit.sptef){};
-	pSPI->spidr.word = data;
-}
-
-/** Receives data through SPI
- * 
- * @return Data received through SPI
- * */
-word get_SPI(void){
-	tSPI* pSPI = (tSPI*) SPI_ADDR;
-	
-	while(!pSPI->spisr.bit.spif){};									/* Wait for data */
-	return pSPI->spidr.word;										/* Return received data */
-}
-
-/** Sends and receives data through the SPI interface
- * 
- * @param data Data to be send through the SPI interface
- * 
- * @return Data received through the SPI interface
- * */
-word tranfer_SPI(word data){
-	send_SPI(data);													/* Send data */
-	return get_SPI();												/* Receive data */
-}
-
+/** @}*/
 /** @}*/

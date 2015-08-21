@@ -59,6 +59,10 @@
 #define SCI_ROUTED 		SCI0					/* Channel routed to LINPHY */
 #define MODIFY_ROUTING 	MODRR2_S0L0RR			/* Register that routes SCI0 to external pins */
 #define ROUTING_VALUE	0b1100					/* Value to write to the register */
+/* SPI definitions */
+#define SPPR_MAX	7
+#define SPR_MAX		7
+#define SPI_ADDR	0x00D8
 #endif /* END of S12VR64 specific definitions */
 
 #if (defined(_MC9S12ZVML128_H)) /* S12ZVML128 specific definitions */
@@ -84,6 +88,10 @@
 #define SCI_ROUTED 		SCI0					/* Channel routed to LINPHY */
 #define MODIFY_ROUTING 	MODRR0_S0L0RR			/* Register that routes SCI0 to external pins */
 #define ROUTING_VALUE	0b110					/* Value to write to the register */
+/* SPI definitions */
+#define SPPR_MAX	7
+#define SPR_MAX		7
+#define SPI_ADDR	0x0780
 #endif /* END of S12ZVML128 specific definitions */
 
 #if (defined(_MC9S12ZVC192_H)) /* S12ZVC192 specific definitions */
@@ -105,6 +113,10 @@
 #define SCI0 			0x0700
 #define SCI1 			0x0710
 #define LIN_PHY_INTEGRATED		0				/* This device does not have LINPHY */
+/* SPI definitions */
+#define SPPR_MAX	7
+#define SPR_MAX		7
+#define SPI_ADDR	0x0780
 #endif /* END of S12ZVC192 specific definitions */
 
 #if (defined(_MC9S12ZVH_H)) /* S12ZVH specific definitions */
@@ -126,6 +138,10 @@
 #define SCI0 			0x0700
 #define SCI1 			0x0710
 #define LIN_PHY_INTEGRATED		0				/* This device does not have LINPHY */
+/* SPI definitions */
+#define SPPR_MAX	7
+#define SPR_MAX		7
+#define SPI_ADDR	0x0780
 #endif /* END of S12ZVH specific definitions */
 
 #endif /* HW_DEF_H_ */

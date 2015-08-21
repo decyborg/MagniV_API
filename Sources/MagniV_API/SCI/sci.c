@@ -17,7 +17,7 @@
  * */
 #include "sci.h"
 
-/** \addtogroup Core Core API functions  
+/** \addtogroup CoreSCI Core SCI API functions  
  *  @{
  */
 
