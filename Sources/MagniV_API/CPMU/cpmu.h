@@ -20,7 +20,8 @@
 
 /* Global definitions */
 /** Internal Reference Clock */
-#define IRC 1000000	
+#define IRC 				1000000	
+#define EnableClockOutput	ECLKCTL_NECLK = 0;
 
 /* Typedefs */
 /** A structure that holds the divider values for the clock configuration. 
